@@ -112,10 +112,9 @@ Automática: A cada hora via CRON
 Os dados são gerados automaticamente por um script PowerShell que unifica todas as 24 fontes.
 Script: Blocklist Unifier
 
-https://img.shields.io/badge/License-MIT-yellow.svg
-https://img.shields.io/badge/PowerShell-5.1+-blue.svg
-https://img.shields.io/badge/version-3.2-green.svg
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://microsoft.com/powershell)
+[![Version](https://img.shields.io/badge/version-3.2-green.svg)](CHANGELOG.md)
 ## ✨ Características do Script
 
     🔒 24 fontes de threat intelligence ativas
