@@ -92,19 +92,19 @@ Os IPs e CIDRs são marcados com a origem no arquivo:
 - `saints`: Saints List
 - `ziyadnz`: Ziyadnz Threat Intel
 
-## 🚀 Como Usar
-...
 
 ## 🔄 Frequência de Atualização
 
 Automática: A cada hora via CRON
 
 ## 📝 Formato do Arquivo
-
+ 
 <IP ou CIDR> # <origem> [informações adicionais]
-...
+
 192.168.1.1 # spamhaus-drop
+
 10.0.0.0/24 # OTX_HoneyAI_HTTP_Honeypot
+
 172.16.0.0/24 # subnet-agregado(20_IPs) otx,spamhaus,emerging
 
 ## 🔧 Como os Dados São Coletados
