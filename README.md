@@ -104,7 +104,7 @@ Os IPs e CIDRs são marcados com a origem no arquivo:
 
 ## 🚀 Como Usar
 
-**Em firewalls (pfSense/OPNsense)**
+**Em firewalls (Fortigate/pfSense/OPNsense)**
 
 ```
 URL: https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt
