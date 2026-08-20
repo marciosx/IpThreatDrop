@@ -7,7 +7,7 @@
 | **Última atualização** | ![Last Update](https://img.shields.io/github/last-commit/marciosx/spamhaus_drop) |
 | **IPs únicos** | ![IPs](https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json) |
 | **Sub-redes /24 agregadas** | ![Subnets](https://img.shields.io/badge/dynamic/json?color=purple&label=Subnets&query=subredes&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json) |
-| **Tamanho** | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json&suffix=KB) |
+| **Tamanho** | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json&suffix=KB) | |
 
 
 ## 📋 Descrição
@@ -170,6 +170,7 @@ Os dados são gerados automaticamente por um script PowerShell que unifica todas
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://microsoft.com/powershell)
 [![Version](https://img.shields.io/badge/version-3.2-green.svg)](CHANGELOG.md)
+
 
 ### ✨ Características do Script
 
