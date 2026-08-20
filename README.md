@@ -132,11 +132,11 @@ $ips = Invoke-WebRequest -Uri $url |
     Select-Object -ExpandProperty Content | 
     Where-Object { $_ -notmatch '^#' -and $_ -match '^[0-9]' }
 
-## 🔄 Frequência de Atualização
+### 🔄 Frequência de Atualização
 
 Automática: A cada hora via CRON
 
-## 📝 Formato do Arquivo
+### 📝 Formato do Arquivo
  
 <IP ou CIDR> # <origem> [informações adicionais]
 
@@ -146,7 +146,7 @@ Automática: A cada hora via CRON
 
 172.16.0.0/24 # subnet-agregado(20_IPs) otx,spamhaus,emerging
 
-🔧 Como os Dados São Coletados
+### 🔧 Como os Dados São Coletados
 
 Os dados são gerados automaticamente por um script PowerShell que unifica todas as 24 fontes.
 Script: Blocklist Unifier
@@ -154,7 +154,8 @@ Script: Blocklist Unifier
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://microsoft.com/powershell)
 [![Version](https://img.shields.io/badge/version-3.2-green.svg)](CHANGELOG.md)
-## ✨ Características do Script
+
+### ✨ Características do Script
 
     🔒 24 fontes de threat intelligence ativas
 
@@ -168,7 +169,7 @@ Script: Blocklist Unifier
 
     📝 Histórico dos últimos 3 dias
 
-##⚠️ Aviso
+###⚠️ Aviso
 
 Esta lista é fornecida "como está", sem garantias de qualquer tipo. Recomenda-se:
 
@@ -184,7 +185,7 @@ Esta lista é fornecida "como está", sem garantias de qualquer tipo. Recomenda-
 
 O uso desta lista é de sua inteira responsabilidade.
 
-##📜 Licença
+###📜 Licença
 
 Este conjunto de dados é fornecido sob a licença MIT. As fontes originais podem ter suas próprias licenças.
 
