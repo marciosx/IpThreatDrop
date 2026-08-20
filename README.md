@@ -107,9 +107,28 @@ Automática: A cada hora via CRON
 
 172.16.0.0/24 # subnet-agregado(20_IPs) otx,spamhaus,emerging
 
-## 🔧 Como os Dados São Coletados
+🔧 Como os Dados São Coletados
 
 Os dados são gerados automaticamente por um script PowerShell que unifica todas as 24 fontes.
+Script: Blocklist Unifier
+
+https://img.shields.io/badge/License-MIT-yellow.svg
+https://img.shields.io/badge/PowerShell-5.1+-blue.svg
+https://img.shields.io/badge/version-3.2-green.svg
+
+## ✨ Características do Script
+
+    🔒 24 fontes de threat intelligence ativas
+
+    🚀 Coleta paralela com timeout e retry automático
+
+    🧹 Deduplicação inteligente com agregação de sub-redes /24
+
+    📊 Logs rotativos (manhã/tarde) com retenção de 1 dia
+
+    🛡️ Suporte OTX AlienVault via API oficial (com paginação)
+
+    📝 Histórico dos últimos 3 dias
 
 ### Arquivo completo
 ```bash
