@@ -135444,4 +135444,4 @@
 99.92.204.97 # blocklist.de,opendbl-blocklistde,opendbl-ipsum,ziyadnz
 99.92.204.98 # opendbl-ipsum,ziyadnz
 99.96.208.84 # netlas
-99.97.147.200 # threatfox# Teste qui 20 ago 2026 15:11:30 UTC
+99.97.147.200 # threatfox
