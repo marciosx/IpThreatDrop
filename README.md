@@ -92,6 +92,45 @@ Os IPs e CIDRs são marcados com a origem no arquivo:
 - `saints`: Saints List
 - `ziyadnz`: Ziyadnz Threat Intel
 
+## 🚀 Como Usar
+
+Em firewalls (pfSense/OPNsense)
+text
+
+URL: https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt
+
+Em MikroTik RouterOS
+text
+
+/tool fetch url="https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt" dst-path=blocklist.txt
+/import file=blocklist.txt
+
+Em iptables
+bash
+
+curl -s https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt | \
+    grep -E '^[0-9]' | \
+    while read ip; do
+        iptables -A INPUT -s $ip -j DROP
+    done
+
+Em Python
+python
+
+import requests
+
+url = "https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt"
+response = requests.get(url)
+ips = [line.split('#')[0].strip() for line in response.text.splitlines() 
+       if line and not line.startswith('#')]
+
+Em PowerShell
+powershell
+
+$url = "https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt"
+$ips = Invoke-WebRequest -Uri $url | 
+    Select-Object -ExpandProperty Content | 
+    Where-Object { $_ -notmatch '^#' -and $_ -match '^[0-9]' }
 
 ## 🔄 Frequência de Atualização
 
@@ -128,6 +167,35 @@ Script: Blocklist Unifier
     🛡️ Suporte OTX AlienVault via API oficial (com paginação)
 
     📝 Histórico dos últimos 3 dias
+
+##⚠️ Aviso
+
+Esta lista é fornecida "como está", sem garantias de qualquer tipo. Recomenda-se:
+
+    ✅ Testar antes de usar em produção
+
+    ✅ Manter backups regulares
+
+    ✅ Verificar periodicamente a precisão dos dados
+
+    ✅ Monitorar falsos positivos
+
+    ✅ Ter um plano de contingência
+
+O uso desta lista é de sua inteira responsabilidade.
+
+##📜 Licença
+
+Este conjunto de dados é fornecido sob a licença MIT. As fontes originais podem ter suas próprias licenças.
+
+MIT License - Copyright (c) 2026 marciosx
+
+##📧 Contato
+
+    Issues: GitHub Issues
+
+    Email: marciosx@gmail.com
+
 
 ### Arquivo completo
 ```bash
