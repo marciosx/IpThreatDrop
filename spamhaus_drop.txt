@@ -9,7 +9,6 @@
 #   5. DatasoftComnet-AntiSpam (ID: 62ed397d23b4894198f2816e)
 # Formato: IP ou CIDR # origem (linhas "subnet-agregado(N_IPs)" representam um /24 inteiro por ter N ou mais IPs maliciosos distintos)
 1.10.143.66 # ziyadnz
-1.10.148.42 # netlas
 1.10.148.43 # netlas
 1.10.148.44 # netlas
 1.10.157.58 # netlas
