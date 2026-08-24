@@ -1,3 +1,10 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  <img src="https://img.shields.io/github/last-commit/marciosx/spamhaus_drop" alt="Last Update">
+  <img src="https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json" alt="IPs">
+  <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json&suffix=KB" alt="Size">
+</p>
+
 # 🛡️ Spamhaus DROP - Blocklist Unificada
 
 ## 📊 Estatísticas Atuais
@@ -12,6 +19,7 @@
 | **Tamanho** | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json&suffix=KB) |
 
 </p>
+
 
 ## 📋 Descrição
 
