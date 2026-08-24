@@ -50,11 +50,12 @@ graph TD
     B --> C[Verificar Allowlist]
     C --> D{IP está na Allowlist?}
     D -->|Sim| E[IP Ignorado - Não será bloqueado]
-    D -->|Não| F[IP Adicionado à Blocklist]
+    D -->|Nao| F[IP Adicionado à Blocklist]
     F --> G[spamhaus_drop.txt]
     E --> H[allowlist.txt]
     G --> I[GitHub]
     H --> I
+```
 
 ## 📦 Lista Completa de Fontes (23)
 
