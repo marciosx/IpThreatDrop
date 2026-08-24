@@ -16,7 +16,7 @@ Lista unificada de IPs maliciosos e blocos CIDR, atualizada automaticamente a pa
 
 
 
-## 📦 Lista Completa de Fontes (24)
+## 📦 Lista Completa de Fontes (23)
 
 ### 🔵 OTX AlienVault (5 listas)
 
@@ -75,14 +75,13 @@ Lista unificada de IPs maliciosos e blocos CIDR, atualizada automaticamente a pa
 |---|------|-----------|
 | 20 | Ziyadnz Threat Intel | Feed de inteligência |
 | 21 | Netlas | Lista local |
-| 22 | Saints List | Lista local |
 
 #### Governo & Abuse
 
 | # | Nome | Descrição |
 |---|------|-----------|
-| 23 | SERPRO Blocklist | Lista do SERPRO |
-| 24 | ThreatFox (abuse.ch) | IPs da ThreatFox |
+| 22 | SERPRO Blocklist | Lista do SERPRO |
+| 23 | ThreatFox (abuse.ch) | IPs da ThreatFox |
 
 ### Categorias de Origem
 
@@ -99,7 +98,6 @@ Os IPs e CIDRs são marcados com a origem no arquivo:
 - `bruteforceblocker`: BruteforceBlocker
 - `serpro`: SERPRO Blocklist
 - `netlas`: Netlas
-- `saints`: Saints List
 - `ziyadnz`: Ziyadnz Threat Intel
 
 ## 🚀 Como Usar
@@ -149,7 +147,7 @@ $ips = Invoke-WebRequest -Uri $url |
 
 ### 🔄 Frequência de Atualização
 
-Automática: a cada hora via CRON.
+Automática: a cada 12 horas via CRON.
 
 ### 📝 Formato do Arquivo
 
