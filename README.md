@@ -44,6 +44,17 @@ A allowlist é um conjunto de IPs que **nunca serão bloqueados**, mesmo que apa
 
 ## 📊 Fluxo de Processamento
 
+```mermaid
+graph TD
+    A[24 Fontes de Threat Intelligence] --> B[Coleta de IPs]
+    B --> C[Verificar Allowlist]
+    C --> D{IP está na Allowlist?}
+    D -->|Sim| E[IP Ignorado - Não será bloqueado]
+    D -->|Não| F[IP Adicionado à Blocklist]
+    F --> G[spamhaus_drop.txt]
+    E --> H[allowlist.txt]
+    G --> I[GitHub]
+    H --> I
 
 ## 📦 Lista Completa de Fontes (23)
 
