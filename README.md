@@ -126,7 +126,7 @@ graph TD
 | # | Nome | Descrição |
 |---|------|-----------|
 | 20 | Ziyadnz Threat Intel | Feed de inteligência |
-| 21 | Netlas | Lista local |
+| 21 | Netlas |  IPs maliciosos |
 
 #### Governo & Abuse
 
