@@ -14,6 +14,47 @@
 
 Lista unificada de IPs maliciosos e blocos CIDR, atualizada automaticamente a partir de **24 fontes** de threat intelligence.
 
+## 🔒 O Que é a Allowlist?
+
+A allowlist é um conjunto de IPs que **nunca serão bloqueados**, mesmo que apareçam nas fontes de threat intelligence. Isso garante que serviços essenciais continuem funcionando.
+
+### 🛡️ Como Funciona
+
+1. **Coleta**: O script coleta IPs de 24 fontes diferentes
+2. **Filtragem**: Antes de adicionar à blocklist, todos os IPs são verificados
+3. **Allowlist**: Se um IP estiver na allowlist, ele é **automaticamente removido** da blocklist
+4. **Resultado**: Você nunca bloqueia acidentalmente serviços como Google, AWS, Microsoft ou Cloudflare
+
+### ✅ IPs que Nunca São Bloqueados
+
+| Empresa | Serviços | Importância |
+|---------|----------|-------------|
+| **Google** | GCP, Workspace, DNS (8.8.8.8) | Essencial para pesquisas, e-mails e DNS |
+| **Amazon AWS** | EC2, S3, CloudFront | Hospedagem de sites e serviços em nuvem |
+| **Microsoft Azure** | Azure, Office 365, Teams | Serviços corporativos e e-mail |
+| **Cloudflare** | CDN, DNS, DDoS Protection | Proteção e aceleração de sites |
+| **E muitas outras** | Oracle, Digital Ocean, Linode, etc. | Provedores de nuvem e CDN |
+
+### 🎯 Exemplo Prático
+
+**Cenário**: O IP `8.8.8.8` (Google DNS) aparece em uma lista de IPs maliciosos.
+
+- ❌ **Sem allowlist**: O IP seria bloqueado, e você perderia acesso ao DNS do Google
+- ✅ **Com allowlist**: O IP é removido automaticamente da blocklist, mantendo seu DNS funcionando
+
+## 📊 Fluxo de Processamento
+
+```mermaid
+graph TD
+    A[24 Fontes de Threat Intelligence] --> B[Coleta de IPs]
+    B --> C[Verificar Allowlist]
+    C --> D{IP está na Allowlist?}
+    D -->|Sim| E[IP Ignorado - Não será bloqueado]
+    D -->|Não| F[IP Adicionado à Blocklist]
+    F --> G[spamhaus_drop.txt]
+    E --> H[allowlist.txt]
+    G --> I[GitHub]
+    H --> I
 
 
 ## 📦 Lista Completa de Fontes (23)
