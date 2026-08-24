@@ -206,8 +206,13 @@ MIT License - Copyright (c) 2026 marciosx
 
 ## 🎯 Download
 
+
+
 ### Arquivo completo
 ```bash
+# Baixar a allowlist
+wget https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/allowlist.txt
+
 # Última versão
 wget https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt
 
