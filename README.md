@@ -13,11 +13,14 @@
 
 | Métrica | Valor |
 |---------|-------|
-| **Última atualização** | <img src="https://img.shields.io/badge/📅%20Data-2026--08--25%2008%3A23%3A23%20-3h-0055ff"> |
+| **Última atualização** | <img src="https://img.shields.io/badge/📅%20Data-2026--08--25%2009%3A23%3A29%20-3h-0055ff"> |
+| **Total coletado** | <img src="https://img.shields.io/badge/📊%20Coletado-320.142-0055ff"> |
+| **Duplicados removidos** | <img src="https://img.shields.io/badge/🔄%20Duplicados-128.243-ff4444"> |
 | **IPs únicos** | <img src="https://img.shields.io/badge/🌐%20IPs%20Únicos-191.899-ff6b00"> |
 | **Sub-redes /24** | <img src="https://img.shields.io/badge/📡%20Subnets%20%2F24-759-9b00ff"> |
 | **Outras sub-redes** | <img src="https://img.shields.io/badge/🔗%20Outras%20Subnets-942-00bcd4"> |
 | **IPs individuais** | <img src="https://img.shields.io/badge/💻%20IPs%20Individuais-168.493-00c853"> |
+| **Sub-redes agregadas** | <img src="https://img.shields.io/badge/🗂️%20Agregadas-0-808080"> |
 | **Tamanho** | <img src="https://img.shields.io/badge/💾%20Tamanho-5.260%20KB-0055ff"> |
 
 </p>
