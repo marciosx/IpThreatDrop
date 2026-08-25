@@ -8,18 +8,21 @@
 </p>
 
 ## 📊 Estatísticas Atuais
+
 <p align="center">
-| Métrica                    | Valor                          |
-|---------------------------|--------------------------------|
-| **Última atualização**    | ![Last Update](https://img.shields.io/github/last-commit/marciosx/IpThreatDrop) |
-| **IPs únicos**            | ![IPs](https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
+
+| Métrica | Valor |
+|---------|-------|
+| **Última atualização** | ![Last Update](https://img.shields.io/github/last-commit/marciosx/IpThreatDrop) |
+| **IPs únicos** | ![IPs](https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
 | **Sub-redes /24 agregadas** | ![Subnets](https://img.shields.io/badge/dynamic/json?color=purple&label=Subnets&query=subredes&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
-| **Tamanho**               | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB) |
+| **Tamanho** | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB) |
+
 </p>
 
 ## 📋 Descrição
 
-**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **24 fontes** de threat intelligence (Spamhaus DROP, Emerging Threats, Abuse.ch, OTX AlienVault, SERPRO, ThreatFox, etc.).
+**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **23 fontes** de threat intelligence (Spamhaus DROP, Emerging Threats, Abuse.ch, OTX AlienVault, SERPRO, ThreatFox, etc.).
 
 ## 🔒 O Que é a Allowlist?
 
@@ -52,7 +55,7 @@ A allowlist é um conjunto de IPs que **nunca serão bloqueados**, mesmo que apa
 
 ```mermaid
 graph TD
-    A[24 Fontes de Threat Intelligence] --> B[Coleta de IPs]
+    A[23 Fontes de Threat Intelligence] --> B[Coleta de IPs]
     B --> C[Verificar Allowlist]
     C --> D{IP está na Allowlist?}
     D -->|Sim| E[IP Ignorado - Não será bloqueado]
@@ -267,6 +270,3 @@ wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.t
 curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
 
 ```
-
-
-
