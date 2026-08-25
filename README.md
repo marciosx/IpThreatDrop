@@ -1,50 +1,38 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
-  <img src="https://img.shields.io/github/last-commit/marciosx/IpThreatDrop" alt="Last Update">
-  <img src="https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json" alt="IPs">
-  <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB" alt="Size">
-</p>
-
 # 🛡️ IpThreatDrop - Blocklist Unificada
 
-## 📊 Estatísticas Atuais
-
 <p align="center">
-
-| Métrica | Valor |
-|---------|-------|
-| **Última atualização** | ![Last Update](https://img.shields.io/github/last-commit/marciosx/IpThreatDrop) |
-| **IPs únicos** | ![IPs](https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
-| **Sub-redes /24 agregadas** | ![Subnets](https://img.shields.io/badge/dynamic/json?color=purple&label=Subnets&query=subredes&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
-| **Tamanho** | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB) |
-
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  <img src="https://img.shields.io/github/last-commit/marciosx/IpThreatDrop" alt="Última atualização">
+  <img src="https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json" alt="IPs únicos">
+  <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB" alt="Tamanho">
 </p>
 
+## 📊 Estatísticas Atuais
+<p align="center">
+| Métrica                    | Valor                          |
+|---------------------------|--------------------------------|
+| **Última atualização**    | ![Last Update](https://img.shields.io/github/last-commit/marciosx/IpThreatDrop) |
+| **IPs únicos**            | ![IPs](https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
+| **Sub-redes /24 agregadas** | ![Subnets](https://img.shields.io/badge/dynamic/json?color=purple&label=Subnets&query=subredes&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
+| **Tamanho**               | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB) |
+</p>
 
 ## 📋 Descrição
 
-Lista unificada de IPs maliciosos e blocos CIDR, atualizada automaticamente a partir de **24 fontes** de threat intelligence.
+**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **24 fontes** de threat intelligence (Spamhaus DROP, Emerging Threats, Abuse.ch, OTX AlienVault, SERPRO, ThreatFox, etc.).
 
 ## 🔒 O Que é a Allowlist?
 
-A allowlist é um conjunto de IPs que **nunca serão bloqueados**, mesmo que apareçam nas fontes de threat intelligence. Isso garante que serviços essenciais continuem funcionando.
+A allowlist é um conjunto de IPs que **nunca serão bloqueados**, mesmo que apareçam nas fontes de threat intelligence. Isso garante que serviços essenciais (Google, AWS, Cloudflare, etc.) continuem funcionando sem interrupção.
 
-### 🛡️ Como Funciona
+### ✅ IPs que Nunca São Bloqueados (exemplos)
+| Empresa          | Serviços                          | Importância                     |
+|------------------|-----------------------------------|---------------------------------|
+| Google           | GCP, Workspace, 8.8.8.8           | DNS, e-mail, pesquisas          |
+| Amazon AWS       | EC2, S3, CloudFront               | Hospedagem em nuvem             |
+| Microsoft Azure  | Azure, Office 365, Teams          | Serviços corporativos           |
+| Cloudflare       | CDN, DNS, DDoS Protection         | Proteção de sites               |
 
-1. **Coleta**: O script coleta IPs de 24 fontes diferentes
-2. **Filtragem**: Antes de adicionar à blocklist, todos os IPs são verificados
-3. **Allowlist**: Se um IP estiver na allowlist, ele é **automaticamente removido** da blocklist
-4. **Resultado**: Você nunca bloqueia acidentalmente serviços como Google, AWS, Microsoft ou Cloudflare
-
-### ✅ IPs que Nunca São Bloqueados
-
-| Empresa | Serviços | Importância |
-|---------|----------|-------------|
-| **Google** | GCP, Workspace, DNS (8.8.8.8) | Essencial para pesquisas, e-mails e DNS |
-| **Amazon AWS** | EC2, S3, CloudFront | Hospedagem de sites e serviços em nuvem |
-| **Microsoft Azure** | Azure, Office 365, Teams | Serviços corporativos e e-mail |
-| **Cloudflare** | CDN, DNS, DDoS Protection | Proteção e aceleração de sites |
-| **E muitas outras** | Oracle, Digital Ocean, Linode, etc. | Provedores de nuvem e CDN |
 
 ### 🎯 Exemplo Prático
 
@@ -52,6 +40,13 @@ A allowlist é um conjunto de IPs que **nunca serão bloqueados**, mesmo que apa
 
 - ❌ **Sem allowlist**: O IP seria bloqueado, e você perderia acesso ao DNS do Google
 - ✅ **Com allowlist**: O IP é removido automaticamente da blocklist, mantendo seu DNS funcionando
+
+### 🛡️ Como Funciona
+
+1. **Coleta**: O script coleta IPs de 23 fontes diferentes
+2. **Filtragem**: Antes de adicionar à blocklist, todos os IPs são verificados
+3. **Allowlist**: Se um IP estiver na allowlist, ele é **automaticamente removido** da blocklist
+4. **Resultado**: Você nunca bloqueia acidentalmente serviços como Google, AWS, Microsoft ou Cloudflare
 
 ## 📊 Fluxo de Processamento
 
@@ -62,7 +57,7 @@ graph TD
     C --> D{IP está na Allowlist?}
     D -->|Sim| E[IP Ignorado - Não será bloqueado]
     D -->|Nao| F[IP Adicionado à Blocklist]
-    F --> G[IpThreatDrop.txt]
+	    F --> G[IpThreatDrop.txt]
     E --> H[allowlist.txt]
     G --> I[GitHub]
     H --> I
@@ -120,7 +115,6 @@ graph TD
 | 17 | OpenDBL - tor-exit | Nós de saída Tor |
 | 18 | OpenDBL - etknown | IPs conhecidos |
 | 19 | OpenDBL - ipsum | IPs maliciosos |
-
 #### Threat Intel & Locais
 
 | # | Nome | Descrição |
@@ -176,7 +170,6 @@ curl -s https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDro
         iptables -A INPUT -s $ip -j DROP
     done
 ```
-
 **Em Python**
 
 ```python
@@ -206,9 +199,16 @@ Automática: a cada 12 horas via CRON.
 ```
 <IP ou CIDR> # <origem> [informações adicionais]
 
-192.168.1.1 # spamhaus-drop
-10.0.0.0/24 # OTX_HoneyAI_HTTP_Honeypot
-172.16.0.0/24 # subnet-agregado(20_IPs) otx,spamhaus,emerging
+IPs individuais (não agregados)
+66.132.172.5 # binarydefense
+66.132.172.100 # threatfox
+66.132.172.200 # serpro,blocklist.de
+
+Sub-redes agregadas com máscaras dinâmicas
+66.132.186.0/24 # subnet-agregado(188_IPs) binarydefense,cins,...
+66.132.195.0/26 # subnet-agregado(45_IPs) opendbl-blocklistde,serpro,...
+66.132.200.0/30 # subnet-agregado(4_IPs) threatfox,ziyadnz,...
+66.132.210.32/29 # subnet-agregado(6_IPs) OTX_HoneyAI_Network_Services_Attack_Feed,...
 ```
 
 ### 🔧 Como os Dados São Coletados
@@ -224,13 +224,12 @@ Os dados são gerados automaticamente por um script PowerShell que unifica todas
 
 ### ✨ Características do Script
 
-- 🔒 24 fontes de threat intelligence ativas
+- 🔒 23 fontes de threat intelligence ativas
 - 🚀 Coleta paralela com timeout e retry automático
-- 🧹 Deduplicação inteligente com agregação de sub-redes /24
+- 🧹 Deduplicação inteligente com agregação de sub-redes /24, /25, /26, /27, /28, /29,/30
 - 📊 Logs rotativos (manhã/tarde) com retenção de 1 dia
 - 🛡️ Suporte OTX AlienVault via API oficial (com paginação)
 - 📝 Histórico dos últimos 3 dias
-
 ### ⚠️ Aviso
 
 Esta lista é fornecida "como está", sem garantias de qualquer tipo. Recomenda-se:
@@ -260,13 +259,14 @@ MIT License - Copyright (c) 2026 marciosx
 
 ### Arquivo completo
 ```bash
-# Baixar a allowlist
+# Allowlist (serviços críticos)
 wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/allowlist.txt
 
-# Última versão
+# Blocklist completa (última versão)
 wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
-
-# Ou via curl
 curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
 
 ```
+
+
+
