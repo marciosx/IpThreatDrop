@@ -9,19 +9,17 @@
 
 ## 📊 Estatísticas Atuais
 
+
 <p align="center">
 
 | Métrica | Valor |
 |---------|-------|
-| **Última atualização** | <img src="https://img.shields.io/badge/📅%20Data-2026--08--25%2009%3A23%3A29%20-3h-0055ff"> |
-| **Total coletado** | <img src="https://img.shields.io/badge/📊%20Coletado-320.142-0055ff"> |
-| **Duplicados removidos** | <img src="https://img.shields.io/badge/🔄%20Duplicados-128.243-ff4444"> |
-| **IPs únicos** | <img src="https://img.shields.io/badge/🌐%20IPs%20Únicos-191.899-ff6b00"> |
-| **Sub-redes /24** | <img src="https://img.shields.io/badge/📡%20Subnets%20%2F24-759-9b00ff"> |
-| **Outras sub-redes** | <img src="https://img.shields.io/badge/🔗%20Outras%20Subnets-942-00bcd4"> |
-| **IPs individuais** | <img src="https://img.shields.io/badge/💻%20IPs%20Individuais-168.493-00c853"> |
-| **Sub-redes agregadas** | <img src="https://img.shields.io/badge/🗂️%20Agregadas-0-808080"> |
-| **Tamanho** | <img src="https://img.shields.io/badge/💾%20Tamanho-5.260%20KB-0055ff"> |
+| **📅 Última atualização** | ![Data](https://img.shields.io/badge/dynamic/json?color=0055ff&label=📅%20Data&query=data&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json) |
+| **🌐 IPs únicos** | ![IPs](https://img.shields.io/badge/dynamic/json?color=ff6b00&label=🌐%20IPs%20Únicos&query=ips_unicos&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json) |
+| **📡 Sub-redes /24** | ![Subnets](https://img.shields.io/badge/dynamic/json?color=9b00ff&label=📡%20Subnets%20%2F24&query=subredes_24&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json) |
+| **🔗 Outras sub-redes** | ![Outras](https://img.shields.io/badge/dynamic/json?color=00bcd4&label=🔗%20Outras%20Subnets&query=subredes_outras&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json) |
+| **💻 IPs individuais** | ![Individuais](https://img.shields.io/badge/dynamic/json?color=00c853&label=💻%20IPs%20Individuais&query=ips_individuais&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json) |
+| **💾 Tamanho** | ![Tamanho](https://img.shields.io/badge/dynamic/json?color=0055ff&label=💾%20Tamanho&query=tamanho_kb&suffix=KB&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json) |
 
 </p>
 
@@ -275,3 +273,6 @@ wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.t
 curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
 
 ```
+
+
+
