@@ -13,7 +13,7 @@
 
 | Métrica | Valor |
 |---------|-------|
-| **Última atualização** | <img src="https://img.shields.io/badge/📅%20Data-2026--08--25%2011%3A23%3A23%20UTC-0055ff"> |
+| **Última atualização** | <img src="https://img.shields.io/badge/📅%20Data-2026--08--25%2008%3A23%3A23%20-3h-0055ff"> |
 | **IPs únicos** | <img src="https://img.shields.io/badge/🌐%20IPs%20Únicos-191.899-ff6b00"> |
 | **Sub-redes /24** | <img src="https://img.shields.io/badge/📡%20Subnets%20%2F24-759-9b00ff"> |
 | **Outras sub-redes** | <img src="https://img.shields.io/badge/🔗%20Outras%20Subnets-942-00bcd4"> |
