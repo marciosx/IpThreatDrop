@@ -1,11 +1,11 @@
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
-  <img src="https://img.shields.io/github/last-commit/marciosx/IpThreatDrop" alt="Last Update">
-  <img src="https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json" alt="IPs">
-  <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB" alt="Size">
+  <img src="https://img.shields.io/github/last-commit/marciosx/spamhaus_drop" alt="Last Update">
+  <img src="https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json" alt="IPs">
+  <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json&suffix=KB" alt="Size">
 </p>
 
-# 🛡️ IpThreatDrop - Blocklist Unificada
+# 🛡️ Spamhaus DROP - Blocklist Unificada
 
 ## 📊 Estatísticas Atuais
 
@@ -13,10 +13,10 @@
 
 | Métrica | Valor |
 |---------|-------|
-| **Última atualização** | ![Last Update](https://img.shields.io/github/last-commit/marciosx/IpThreatDrop) |
-| **IPs únicos** | ![IPs](https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
-| **Sub-redes /24 agregadas** | ![Subnets](https://img.shields.io/badge/dynamic/json?color=purple&label=Subnets&query=subredes&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
-| **Tamanho** | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB) |
+| **Última atualização** | ![Last Update](https://img.shields.io/github/last-commit/marciosx/spamhaus_drop) |
+| **IPs únicos** | ![IPs](https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json) |
+| **Sub-redes /24 agregadas** | ![Subnets](https://img.shields.io/badge/dynamic/json?color=purple&label=Subnets&query=subredes&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json) |
+| **Tamanho** | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2Fspamhaus_drop%2Fmain%2Fstats.json&suffix=KB) |
 
 </p>
 
@@ -62,7 +62,7 @@ graph TD
     C --> D{IP está na Allowlist?}
     D -->|Sim| E[IP Ignorado - Não será bloqueado]
     D -->|Nao| F[IP Adicionado à Blocklist]
-    F --> G[IpThreatDrop.txt]
+    F --> G[spamhaus_drop.txt]
     E --> H[allowlist.txt]
     G --> I[GitHub]
     H --> I
@@ -86,7 +86,7 @@ graph TD
 
 | # | Nome | Descrição |
 |---|------|-----------|
-| 6 | IpThreatDrop | Blocos CIDR de redes maliciosas |
+| 6 | Spamhaus DROP | Blocos CIDR de redes maliciosas |
 | 7 | Emerging Threats | IPs comprometidos |
 
 #### Abuse.ch & Blocklist.de
@@ -140,7 +140,7 @@ graph TD
 Os IPs e CIDRs são marcados com a origem no arquivo:
 
 - `OTX_*`: Fontes do AlienVault OTX
-- `spamhaus-drop`: IpThreatDrop
+- `spamhaus-drop`: Spamhaus DROP
 - `emergingthreats`: Emerging Threats
 - `blocklist.de`: blocklist.de
 - `cins`: CINS Score
@@ -157,20 +157,20 @@ Os IPs e CIDRs são marcados com a origem no arquivo:
 **Em firewalls (Fortigate/pfSense/OPNsense)**
 
 ```
-URL: https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
+URL: https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt
 ```
 
 **Em MikroTik RouterOS**
 
 ```
-/tool fetch url="https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt" dst-path=blocklist.txt
+/tool fetch url="https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt" dst-path=blocklist.txt
 /import file=blocklist.txt
 ```
 
 **Em iptables**
 
 ```bash
-curl -s https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt | \
+curl -s https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt | \
     grep -E '^[0-9]' | \
     while read ip; do
         iptables -A INPUT -s $ip -j DROP
@@ -182,7 +182,7 @@ curl -s https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDro
 ```python
 import requests
 
-url = "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt"
+url = "https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt"
 response = requests.get(url)
 ips = [line.split('#')[0].strip() for line in response.text.splitlines()
        if line and not line.startswith('#')]
@@ -191,7 +191,7 @@ ips = [line.split('#')[0].strip() for line in response.text.splitlines()
 **Em PowerShell**
 
 ```powershell
-$url = "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt"
+$url = "https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt"
 $ips = Invoke-WebRequest -Uri $url |
     Select-Object -ExpandProperty Content |
     Where-Object { $_ -notmatch '^#' -and $_ -match '^[0-9]' }
@@ -261,12 +261,12 @@ MIT License - Copyright (c) 2026 marciosx
 ### Arquivo completo
 ```bash
 # Baixar a allowlist
-wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/allowlist.txt
+wget https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/allowlist.txt
 
 # Última versão
-wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
+wget https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt
 
 # Ou via curl
-curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
+curl -O https://raw.githubusercontent.com/marciosx/spamhaus_drop/main/spamhaus_drop.txt
 
 ```
