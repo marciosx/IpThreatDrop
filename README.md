@@ -13,12 +13,12 @@
 
 | Métrica | Valor |
 |---------|-------|
-| **Última atualização** | ![Last Update](https://img.shields.io/badge/Data-2026--08--25%2011%3A23%3A23%20UTC-blue) |
-| **IPs únicos** | ![IPs](https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
-| **Sub-redes /24 agregadas** | ![Subnets](https://img.shields.io/badge/dynamic/json?color=purple&label=Subnets%20%2F24&query=subredes_24&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
-| **Outras sub-redes** | ![Other Subnets](https://img.shields.io/badge/dynamic/json?color=teal&label=Outras%20Subnets&query=subredes_outras&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
-| **IPs individuais** | ![Individual IPs](https://img.shields.io/badge/dynamic/json?color=green&label=IPs%20Individuais&query=ips_individuais&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json) |
-| **Tamanho** | ![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Tamanho&query=tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB) |
+| **Última atualização** | <img src="https://img.shields.io/badge/📅%20Data-2026--08--25%2011%3A23%3A23%20UTC-0055ff"> |
+| **IPs únicos** | <img src="https://img.shields.io/badge/🌐%20IPs%20Únicos-191.899-ff6b00"> |
+| **Sub-redes /24** | <img src="https://img.shields.io/badge/📡%20Subnets%20%2F24-759-9b00ff"> |
+| **Outras sub-redes** | <img src="https://img.shields.io/badge/🔗%20Outras%20Subnets-942-00bcd4"> |
+| **IPs individuais** | <img src="https://img.shields.io/badge/💻%20IPs%20Individuais-168.493-00c853"> |
+| **Tamanho** | <img src="https://img.shields.io/badge/💾%20Tamanho-5.260%20KB-0055ff"> |
 
 </p>
 
