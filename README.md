@@ -9,7 +9,7 @@
 
 
 ## 📋 Descrição
-**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **23 fontes** de threat intelligence (Spamhaus DROP, Emerging Threats, Abuse.ch, OTX AlienVault, SERPRO, ThreatFox, etc.).
+**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **25 fontes** de threat intelligence (Spamhaus DROP, Emerging Threats, Abuse.ch, OTX AlienVault, SERPRO, ThreatFox, etc.).
 
 ## 🔒 O Que é a Allowlist?
 
@@ -33,7 +33,7 @@ A allowlist é um conjunto de IPs que **nunca serão bloqueados**, mesmo que apa
 
 ### 🛡️ Como Funciona
 
-1. **Coleta**: O script coleta IPs de 23 fontes diferentes
+1. **Coleta**: O script coleta IPs de 25 fontes diferentes
 2. **Filtragem**: Antes de adicionar à blocklist, todos os IPs são verificados
 3. **Allowlist**: Se um IP estiver na allowlist, ele é **automaticamente removido** da blocklist
 4. **Resultado**: Você nunca bloqueia acidentalmente serviços como Google, AWS, Microsoft ou Cloudflare
