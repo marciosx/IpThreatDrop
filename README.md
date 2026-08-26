@@ -10,7 +10,7 @@
 ## 📊 Estatísticas Atuais
 
 <p align="center">
-# Estatísticas Atuais
+
 
 | Métrica | Valor |
 |---------|-------|
