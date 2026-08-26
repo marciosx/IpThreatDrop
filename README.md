@@ -9,18 +9,12 @@
 
 ## 📊 Estatísticas Atuais
 
-| Métrica | Valor |
-|---------|-------|
-| **📅 Última atualização** | <img src="https://img.shields.io/badge/dynamic/json?color=0055ff&label=📅%20Data&query=$.data&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json"> |
-| **📊 Total coletado** | <img src="https://img.shields.io/badge/dynamic/json?color=0055ff&label=📊%20Total&query=$.coletado&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json"> |
-| **🔄 Duplicados removidos** | <img src="https://img.shields.io/badge/dynamic/json?color=ff4444&label=🔄%20Duplicados&query=$.duplicados&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json"> |
-| **🌐 IPs únicos** | <img src="https://img.shields.io/badge/dynamic/json?color=ff6b00&label=🌐%20IPs%20Únicos&query=$.ips_unicos&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json"> |
-| **📡 Sub-redes /24** | <img src="https://img.shields.io/badge/dynamic/json?color=9b00ff&label=📡%20Subnets%20%2F24&query=$.subredes_24&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json"> |
-| **🔗 Outras sub-redes** | <img src="https://img.shields.io/badge/dynamic/json?color=00bcd4&label=🔗%20Outras%20Subnets&query=$.subredes_outras&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json"> |
-| **💻 IPs individuais** | <img src="https://img.shields.io/badge/dynamic/json?color=00c853&label=💻%20IPs%20Individuais&query=$.ips_individuais&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json"> |
-| **🗂️ Sub-redes agregadas** | <img src="https://img.shields.io/badge/dynamic/json?color=808080&label=🗂️%20Agregadas&query=$.subredes_agregadas&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json"> |
-| **💾 Tamanho** | <img src="https://img.shields.io/badge/dynamic/json?color=0055ff&label=💾%20Tamanho&query=$.tamanho_kb&url=https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json&suffix=KB"> |
-
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  <img src="https://img.shields.io/github/last-commit/marciosx/IpThreatDrop" alt="Última atualização">
+  <img src="https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=%24.ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json" alt="IPs únicos">
+  <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=%24.tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB" alt="Tamanho">
+</p>
 
 ## 📋 Descrição
 
