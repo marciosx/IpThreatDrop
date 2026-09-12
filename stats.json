@@ -1,12 +1,12 @@
 {
-  "data": "2026-09-11 17:00:01 -3h",
-  "coletado": 450541,
-  "duplicados": 194959,
-  "ips_unicos": 255582,
-  "linhas_arquivo": 231775,
+  "data": "2026-09-12 01:00:02 -3h",
+  "coletado": 462606,
+  "duplicados": 198101,
+  "ips_unicos": 264505,
+  "linhas_arquivo": 240422,
   "subredes_agregadas": 0,
-  "tamanho_kb": 7528,
-  "ips_individuais": 229936,
-  "subredes_24": 763,
-  "subredes_outras": 945
+  "tamanho_kb": 7864,
+  "ips_individuais": 238574,
+  "subredes_24": 770,
+  "subredes_outras": 946
 }
