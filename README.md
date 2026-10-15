@@ -45,7 +45,7 @@ A allowlist é um conjunto de IPs e CIDRs que **nunca serão bloqueados**, mesmo
 | **UptimeRobot** | Monitoramento | Uptime |
 | **Imperva** | WAF, DDoS | Segurança |
 | **Stripe** | Webhooks, API | Pagamentos |
-| **Antivírus (fixo)** | Bitdefender, ESET, Kaspersky | Endpoint Protection |
+| **Antivírus (fixo)** | Bitdefender, ESET, Kaspersky, etc. | Endpoint Protection |
 
 ### 🎯 Exemplo Prático
 
@@ -90,33 +90,35 @@ graph TD
     J --> L
 ```
 
-## 📦 Lista Completa de Fontes (25)
+## 📦 Lista Completa de Fontes
 
 Os IPs e CIDRs são marcados com a origem no arquivo:
 
-| 1 |- | **spamhaus-drop: Spamhaus DROP |
-| 2 |-  | **blocklist.brute: blocklist.de (bruteforce) |
-| 3 |-  | **binarydefense: Binary Defense |
-| 4 |-  | **opendbl-tor: OpenDBL tor-exit |
-| 5 |-  | **ipsum-github: IPsum (stamparm) |
-| 6 |-  | **netlas: Netlas |
-| 7 |-  | **nra-osint: NRA OSINT |
-| 8 |-  | **nra-sentinel-critical: NRA High Critical |
-| 9 |-  | **abuseipdb-borestad: AbuseIPDB (Borestad) |
-| 10 |- | **cps-avanzato-c2: CriticalPath Security (Avanzato) |
-| 11 |- | **cps-collected-iocs: CriticalPath Security (Collected IOCs) |
-| 12 |- | **bitwire-outbound: Bitwire Outbound |
-| 13 |- | **cins: CINS Score |
-| 14 |- | |**public-xlogic: Public Xlogic |
-| 15 |- | **ipinsights: IP Insights |
-| 16 |- | **dshield: DShield |
-| 17 |- | **serpro: SERPRO Blocklist |
-| 18 |- | **threatfox: ThreatFox (abuse.ch) |
-| 19 |- | **greensnow: GreenSnow |
-| 20 |- | **spydisec: SpydiSec |
-| 21 |- | **c2intel-30d: C2IntelFeeds |
-| 22 |- | **crowdsec-1 / crowdsec-2 / crowdsec-3: CrowdSec |
-| 23 |- | **abuseipdb: AbuseIPDB (API) |
+| # | Marca | Fonte |
+|---|-------|-------|
+| 1 | `spamhaus-drop` | Spamhaus DROP |
+| 2 | `blocklist.brute` | blocklist.de (bruteforce) |
+| 3 | `binarydefense` | Binary Defense |
+| 4 | `opendbl-tor` | OpenDBL tor-exit |
+| 5 | `ipsum-github` | IPsum (stamparm) |
+| 6 | `netlas` | Netlas |
+| 7 | `nra-osint` | NRA OSINT |
+| 8 | `nra-sentinel-critical` | NRA High Critical |
+| 9 | `abuseipdb-borestad` | AbuseIPDB (Borestad) |
+| 10 | `cps-avanzato-c2` | CriticalPath Security (Avanzato) |
+| 11 | `cps-collected-iocs` | CriticalPath Security (Collected IOCs) |
+| 12 | `bitwire-outbound` | Bitwire Outbound |
+| 13 | `cins` | CINS Score |
+| 14 | `public-xlogic` | Public Xlogic |
+| 15 | `ipinsights` | IP Insights |
+| 16 | `dshield` | DShield |
+| 17 | `serpro` | SERPRO Blocklist |
+| 18 | `threatfox` | ThreatFox (abuse.ch) |
+| 19 | `greensnow` | GreenSnow |
+| 20 | `spydisec` | SpydiSec |
+| 21 | `c2intel-30d` | C2IntelFeeds |
+| 22 | `crowdsec-1` / `crowdsec-2` / `crowdsec-3` | CrowdSec |
+| 23 | `abuseipdb` | AbuseIPDB (API) |
 
 ## 🚀 Como Usar
 
@@ -300,3 +302,4 @@ wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.t
 curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
 
 ```
+
