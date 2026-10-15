@@ -94,29 +94,29 @@ graph TD
 
 Os IPs e CIDRs são marcados com a origem no arquivo:
 
-|1|- |**spamhaus-drop: Spamhaus DROP|
-|2|-  |**blocklist.brute: blocklist.de (bruteforce)|
-|3|-  |**binarydefense: Binary Defense|
-|4|-  |**opendbl-tor: OpenDBL tor-exit|
-|5|-  |**ipsum-github: IPsum (stamparm)|
-|6|-  |**netlas: Netlas|
-|7|-  ||**nra-osint: NRA OSINT|
-||8|-  |**nra-sentinel-critical: NRA High Critical|
-||9|-  |**abuseipdb-borestad: AbuseIPDB (Borestad)|
-|10|- |**cps-avanzato-c2: CriticalPath Security (Avanzato)|
-|11|- |**cps-collected-iocs: CriticalPath Security (Collected IOCs)|
-|12|- |**bitwire-outbound: Bitwire Outbound|
-|13|- |**cins: CINS Score|
-|14|- ||**public-xlogic: Public Xlogic|
-|15|- |**ipinsights: IP Insights|
-|16|- |**dshield: DShield|
-|17|- |**serpro: SERPRO Blocklist|
-|18|- |**threatfox: ThreatFox (abuse.ch)|
-|19|- |**greensnow: GreenSnow|
-|20|- |**spydisec: SpydiSec|
-|21|- |**c2intel-30d: C2IntelFeeds|
-|22|- |**crowdsec-1 / crowdsec-2 / crowdsec-3: CrowdSec|
-|23|- |**abuseipdb: AbuseIPDB (API)|
+| 1 |- | **spamhaus-drop: Spamhaus DROP |
+| 2 |-  | **blocklist.brute: blocklist.de (bruteforce) |
+| 3 |-  | **binarydefense: Binary Defense |
+| 4 |-  | **opendbl-tor: OpenDBL tor-exit |
+| 5 |-  | **ipsum-github: IPsum (stamparm) |
+| 6 |-  | **netlas: Netlas |
+| 7 |-  | **nra-osint: NRA OSINT |
+| 8 |-  | **nra-sentinel-critical: NRA High Critical |
+| 9 |-  | **abuseipdb-borestad: AbuseIPDB (Borestad) |
+| 10 |- | **cps-avanzato-c2: CriticalPath Security (Avanzato) |
+| 11 |- | **cps-collected-iocs: CriticalPath Security (Collected IOCs) |
+| 12 |- | **bitwire-outbound: Bitwire Outbound |
+| 13 |- | **cins: CINS Score |
+| 14 |- | |**public-xlogic: Public Xlogic |
+| 15 |- | **ipinsights: IP Insights |
+| 16 |- | **dshield: DShield |
+| 17 |- | **serpro: SERPRO Blocklist |
+| 18 |- | **threatfox: ThreatFox (abuse.ch) |
+| 19 |- | **greensnow: GreenSnow |
+| 20 |- | **spydisec: SpydiSec |
+| 21 |- | **c2intel-30d: C2IntelFeeds |
+| 22 |- | **crowdsec-1 / crowdsec-2 / crowdsec-3: CrowdSec |
+| 23 |- | **abuseipdb: AbuseIPDB (API) |
 
 ## 🚀 Como Usar
 
