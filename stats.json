@@ -1,7 +1,79 @@
 {
-  "data": "2026-10-15 11:03:45 UTC",
-  "ips_unicos": 373320,
-  "subredes": 0,
-  "coletado": 1390142,
-  "tamanho_kb": 14244
+  "schema_version": 3,
+  "projeto": "IpThreatDrop",
+  "ips_unicos": 373323,
+  "coletado": 1390305,
+  "duplicados": 457243,
+  "linhas_arquivo": 280917,
+  "subredes_agregadas": 202,
+  "tamanho_kb": 14240,
+  "publicado_em": {
+    "utc": "2026-10-15T11:57:21Z",
+    "local": "2026-10-15T08:57:21-03:00",
+    "unix": 1792065441
+  },
+  "blocklist": {
+    "gerada_em_utc": "2026-10-15 08:54:02",
+    "modo": "menor bloco CIDR que cobre todos os IPs do /24 (de /24 a /30, nunca /32), densidade mínima 30%",
+    "densidade_minima_pct": 30,
+    "linhas_publicadas": 280917,
+    "limite_linhas": 300000,
+    "utilizacao_limite_pct": 93.6,
+    "linhas_cortadas_por_score": 0,
+    "score_minimo": 3,
+    "tamanho_mb": 13.9
+  },
+  "coleta": {
+    "coletado": 1390305,
+    "duplicados": 457243,
+    "duplicados_percentual": 32.89,
+    "ips_cidrs_unicos": 373323
+  },
+  "composicao": {
+    "ips_individuais": 269601,
+    "subredes_24": 995,
+    "subredes_outras": 10127,
+    "subredes_agregadas": 202,
+    "mascaras_agregadas": { "/29": 0, "/25": 2, "/30": 0, "/26": 0, "/27": 0, "/24": 200, "/28": 0 }
+  },
+  "score": {
+    "maximo": 48,
+    "medio": 5.0,
+    "distribuicao": {
+      "ate_4": 192432,
+      "de_5_a_9": 69070,
+      "10_ou_mais": 19415
+    }
+  },
+  "fontes": {
+    "ativas": 25,
+    "lista": [ "blocklist.brute", "binarydefense", "opendbl-tor", "ipsum-github", "netlas", "crowdsec-1", "crowdsec-2", "crowdsec-3", "abuseipdb", "spamhaus-drop", "nra-osint", "nra-sentinel-critical", "ipinsights", "abuseipdb-borestad", "cps-avanzato-c2", "cps-collected-iocs", "bitwire-outbound", "cins", "public-xlogic", "dshield", "serpro", "threatfox", "greensnow", "spydisec", "c2intel-30d" ],
+    "pulses_otx": 5,
+    "top_por_volume": { "ipinsights": 182390, "abuseipdb-borestad": 88671, "nra-osint": 81927, "ipsum-github": 80903, "bitwire-outbound": 36959, "cps-collected-iocs": 25386, ".5": 15358, "threatfox": 14482, "serpro": 13678, "cps-avanzato-c2": 8874 }
+  },
+  "allowlist": {
+    "arquivo_presente": true,
+    "entradas": 74228,
+    "provedores": [ "AWS", "Cloudflare", "Google", "Microsoft", "Oracle", "Fastly", "Akamai", "GitHub", "Zoom", "Datadog", "Pingdom", "UptimeRobot", "Imperva", "Stripe", "Scanners Legítimos (Xorlent)" ],
+    "antivirus": [ "Bitdefender", "ESET", "Kaspersky" ]
+  },
+  "variacao": {
+    "linhas_anterior": 280916,
+    "linhas_diferenca": 1,
+    "linhas_percentual": 0.00,
+    "ips_unicos_anterior": 373320,
+    "ips_unicos_diferenca": 3,
+    "ips_unicos_percentual": 0.00
+  },
+  "integridade": {
+    "md5": "a5bed51b87703d4d911e3f02d5a80bf2",
+    "sha256": "64fc65f59518b72e87b40faca29642a2b65f5e2924915736464f0624d0660592"
+  },
+  "links": {
+    "blocklist": "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt",
+    "allowlist": "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/allowlist.txt",
+    "stats": "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json",
+    "repositorio": "https://github.com/marciosx/IpThreatDrop"
+  },
+  "gerado_por": "gitdnssrv"
 }
