@@ -1,61 +1,61 @@
 {
   "schema_version": 3,
   "projeto": "IpThreatDrop",
-  "ips_unicos": 373324,
-  "coletado": 1390299,
-  "duplicados": 457216,
-  "linhas_arquivo": 282797,
-  "subredes_agregadas": 172,
-  "tamanho_kb": 14344,
+  "ips_unicos": 374831,
+  "coletado": 1415972,
+  "duplicados": 476504,
+  "linhas_arquivo": 285320,
+  "subredes_agregadas": 174,
+  "tamanho_kb": 14676,
   "publicado_em": {
-    "utc": "2026-10-15T19:00:31Z",
-    "local": "2026-10-15T16:00:31-03:00",
-    "unix": 1792090831
+    "utc": "2026-10-15T21:49:52Z",
+    "local": "2026-10-15T18:49:52-03:00",
+    "unix": 1792100992
   },
   "status": {
-    "nivel": "ok",
-    "alertas": [  ]
+    "nivel": "atencao",
+    "alertas": [ "Utilização do limite em 95,1% (acima de 95%)" ]
   },
   "blocklist": {
-    "gerada_em_utc": "2026-10-15 10:15:00",
+    "gerada_em_utc": "2026-10-15 17:05:34",
     "modo": "menor bloco CIDR que cobre todos os IPs do /24 (de /24 a /30, nunca /32), com desce-mascara",
     "densidade_minima_pct": 0,
-    "linhas_publicadas": 282797,
+    "linhas_publicadas": 285320,
     "limite_linhas": 300000,
-    "utilizacao_limite_pct": 94.3,
+    "utilizacao_limite_pct": 95.1,
     "linhas_cortadas_por_score": 0,
     "score_minimo": 3,
-    "tamanho_mb": 14.0
+    "tamanho_mb": 14.3
   },
   "coleta": {
-    "coletado": 1390299,
-    "duplicados": 457216,
-    "duplicados_percentual": 32.89,
-    "ips_cidrs_unicos": 373324
+    "coletado": 1415972,
+    "duplicados": 476504,
+    "duplicados_percentual": 33.65,
+    "ips_cidrs_unicos": 374831
   },
   "composicao": {
-    "ips_individuais": 271439,
-    "subredes_24": 999,
-    "subredes_outras": 10193,
-    "subredes_agregadas": 172,
-    "mascaras_agregadas": { "/29": 0, "/25": 2, "/30": 0, "/26": 0, "/27": 0, "/24": 170, "/28": 0 },
-    "blocos_cidr_total": 11358,
-    "blocos_por_mascara": { "/12": {"total": 3, "agregados": 0}, "/14": {"total": 2, "agregados": 0}, "/15": {"total": 4, "agregados": 0}, "/16": {"total": 114, "agregados": 0}, "/17": {"total": 21, "agregados": 0}, "/18": {"total": 42, "agregados": 0}, "/19": {"total": 66, "agregados": 0}, "/20": {"total": 115, "agregados": 0}, "/21": {"total": 89, "agregados": 0}, "/22": {"total": 329, "agregados": 0}, "/23": {"total": 176, "agregados": 0}, "/24": {"total": 1163, "agregados": 170}, "/25": {"total": 68, "agregados": 2}, "/26": {"total": 83, "agregados": 0}, "/27": {"total": 88, "agregados": 0}, "/28": {"total": 119, "agregados": 0}, "/29": {"total": 291, "agregados": 0}, "/30": {"total": 745, "agregados": 0}, "/31": {"total": 2958, "agregados": 0}, "/32": {"total": 4882, "agregados": 0} }
+    "ips_individuais": 274170,
+    "subredes_24": 997,
+    "subredes_outras": 9985,
+    "subredes_agregadas": 174,
+    "mascaras_agregadas": { "/29": 0, "/25": 2, "/30": 0, "/26": 0, "/27": 0, "/24": 172, "/28": 0 },
+    "blocos_cidr_total": 11150,
+    "blocos_por_mascara": { "/12": {"total": 3, "agregados": 0}, "/14": {"total": 2, "agregados": 0}, "/15": {"total": 4, "agregados": 0}, "/16": {"total": 114, "agregados": 0}, "/17": {"total": 21, "agregados": 0}, "/18": {"total": 42, "agregados": 0}, "/19": {"total": 66, "agregados": 0}, "/20": {"total": 115, "agregados": 0}, "/21": {"total": 89, "agregados": 0}, "/22": {"total": 329, "agregados": 0}, "/23": {"total": 176, "agregados": 0}, "/24": {"total": 1163, "agregados": 172}, "/25": {"total": 68, "agregados": 2}, "/26": {"total": 82, "agregados": 0}, "/27": {"total": 85, "agregados": 0}, "/28": {"total": 117, "agregados": 0}, "/29": {"total": 289, "agregados": 0}, "/30": {"total": 726, "agregados": 0}, "/31": {"total": 2960, "agregados": 0}, "/32": {"total": 4699, "agregados": 0} }
   },
   "score": {
     "maximo": 48,
-    "medio": 5.0,
+    "medio": 5.2,
     "distribuicao": {
-      "ate_4": 193764,
-      "de_5_a_9": 69609,
-      "10_ou_mais": 19424
+      "ate_4": 179125,
+      "de_5_a_9": 85632,
+      "10_ou_mais": 20563
     }
   },
   "fontes": {
     "ativas": 25,
     "lista": [ "blocklist.brute", "binarydefense", "opendbl-tor", "ipsum-github", "netlas", "crowdsec-1", "crowdsec-2", "crowdsec-3", "abuseipdb", "spamhaus-drop", "nra-osint", "nra-sentinel-critical", "ipinsights", "abuseipdb-borestad", "cps-avanzato-c2", "cps-collected-iocs", "bitwire-outbound", "cins", "public-xlogic", "dshield", "serpro", "threatfox", "greensnow", "spydisec", "c2intel-30d" ],
     "pulses_otx": 5,
-    "top_por_volume": { "ipinsights": 184184, "abuseipdb-borestad": 89657, "nra-osint": 81980, "ipsum-github": 81457, "bitwire-outbound": 37093, "cps-collected-iocs": 25855, ".5": 15436, "threatfox": 14517, "serpro": 13762, "cins": 8900 },
+    "top_por_volume": { "ipinsights": 201764, "abuseipdb-borestad": 91765, "ipsum-github": 82682, "nra-osint": 81993, "bitwire-outbound": 37054, "cps-collected-iocs": 25877, "serpro": 15893, ".5": 15747, "threatfox": 14595, "cins": 10801 },
     "sem_entradas": [  ]
   },
   "allowlist": {
@@ -66,18 +66,18 @@
   },
   "variacao": {
     "linhas_anterior": 282797,
-    "linhas_diferenca": 0,
-    "linhas_percentual": 0.00,
+    "linhas_diferenca": 2523,
+    "linhas_percentual": 0.89,
     "ips_unicos_anterior": 373324,
-    "ips_unicos_diferenca": 0,
-    "ips_unicos_percentual": 0.00,
-    "adicionados": 0,
-    "removidos": 0,
-    "rotatividade_percentual": 0.0
+    "ips_unicos_diferenca": 1507,
+    "ips_unicos_percentual": 0.40,
+    "adicionados": 8504,
+    "removidos": 5981,
+    "rotatividade_percentual": 5.1
   },
   "integridade": {
-    "md5": "e5d05c3feb02b2cf545d30cd7b6bba86",
-    "sha256": "fc2b4d139aa5e55fc6eaa48b0a9f9c52881e599a37f26700a3516b1423b73475"
+    "md5": "b979089600b786b63f6a3a81fc83f5f4",
+    "sha256": "38461a9d6695330211f267673e6b4340c30021b00e455d83915cdf41a65fc57c"
   },
   "links": {
     "blocklist": "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt",
