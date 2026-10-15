@@ -1,11 +1,18 @@
+
 # 🛡️ IpThreatDrop - Blocklist Unificada
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+  <img src="https://img.shields.io/badge/version-3.15.8-green.svg" alt="Versão">
   <img src="https://img.shields.io/github/last-commit/marciosx/IpThreatDrop" alt="Última atualização">
+  <img src="https://img.shields.io/badge/fontes-25-blue.svg" alt="Fontes">
+  <img src="https://img.shields.io/badge/allowlist-16-green.svg" alt="Allowlist">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=%24.ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json" alt="IPs únicos">
   <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=%24.tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB" alt="Tamanho">
-  <img src="https://img.shields.io/badge/version-3.15.8-green.svg" alt="Versão">
+  <img src="https://img.shields.io/badge/blocklist-300k%20linhas-orange.svg" alt="Blocklist">
 </p>
 
 ## 📋 Descrição
@@ -302,4 +309,3 @@ wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.t
 curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
 
 ```
-
