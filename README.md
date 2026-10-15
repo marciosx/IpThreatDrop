@@ -5,140 +5,119 @@
   <img src="https://img.shields.io/github/last-commit/marciosx/IpThreatDrop" alt="Última atualização">
   <img src="https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=%24.ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json" alt="IPs únicos">
   <img src="https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=%24.tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB" alt="Tamanho">
+  <img src="https://img.shields.io/badge/version-3.15.8-green.svg" alt="Versão">
 </p>
 
-
 ## 📋 Descrição
-**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **25 fontes** de threat intelligence (Spamhaus DROP, Emerging Threats, Abuse.ch, OTX AlienVault, SERPRO, ThreatFox, etc.).
+
+**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **múltiplas fontes** de threat intelligence (Spamhaus DROP, Abuse.ch, SERPRO, ThreatFox, CrowdSec, AbuseIPDB, NRA, CPS, Bitwire, CINS, DShield, GreenSnow, SpydiSec, C2IntelFeeds, IPsum, entre outras).
+
+Os dados são gerados por um **script PowerShell v3.15.8** que faz:
+
+- 🔒 Coleta de **21+ fontes ativas** (Sources + CacheSources + AuthSources)
+- 🛡️ Aplica **allowlist de 18 fontes** (16 corporativas + antivírus)
+- 🧹 **Deduplicação inteligente** com agregação dinâmica (`/24` a `/30`)
+- 📊 **Score de ameaça** por concordância entre fontes
+- 🚀 Publicação em `IpThreatDrop.txt` e `allowlist.txt`
+- ☁️ Envio para **WebDAV CasaOS** com verificação de SHA-256
+
+---
 
 ## 🔒 O Que é a Allowlist?
 
-A allowlist é um conjunto de IPs que **nunca serão bloqueados**, mesmo que apareçam nas fontes de threat intelligence. Isso garante que serviços essenciais (Google, AWS, Cloudflare, etc.) continuem funcionando sem interrupção.
+A allowlist é um conjunto de IPs e CIDRs que **nunca serão bloqueados**, mesmo que apareçam nas fontes de threat intelligence. Isso garante que serviços essenciais continuem funcionando sem interrupção.
 
-### ✅ IPs que Nunca São Bloqueados (exemplos)
-| Empresa          | Serviços                          | Importância                     |
-|------------------|-----------------------------------|---------------------------------|
-| Google           | GCP, Workspace, 8.8.8.8           | DNS, e-mail, pesquisas          |
-| Amazon AWS       | EC2, S3, CloudFront               | Hospedagem em nuvem             |
-| Microsoft Azure  | Azure, Office 365, Teams          | Serviços corporativos           |
-| Cloudflare       | CDN, DNS, DDoS Protection         | Proteção de sites               |
+### ✅ Serviços na Allowlist (16 fontes corporativas)
 
+| Empresa / Serviço | Serviços | Importância |
+|-------------------|----------|-------------|
+| **Google** | GCP, Workspace, 8.8.8.8 | DNS, e-mail, pesquisas |
+| **Amazon AWS** | EC2, S3, CloudFront | Hospedagem em nuvem |
+| **Microsoft Azure** | Azure, Office 365, Teams | Serviços corporativos |
+| **Cloudflare** | CDN, DNS, DDoS Protection | Proteção de sites |
+| **Oracle Cloud** | OCI, Autonomous DB | Banco de dados em nuvem |
+| **Fastly** | CDN, Edge Compute | Distribuição de conteúdo |
+| **Akamai** | CDN, WAF, Anti-DDoS | Distribuição global |
+| **GitHub** | Pages, API, Actions, Git | DevOps |
+| **Zoom** | Reuniões, Webinars | Videoconferência |
+| **Datadog** | APM, Logs, Métricas | Observabilidade |
+| **Pingdom** | Monitoramento sintético | Uptime |
+| **UptimeRobot** | Monitoramento | Uptime |
+| **Imperva** | WAF, DDoS | Segurança |
+| **Stripe** | Webhooks, API | Pagamentos |
+| **Scanners (Xorlent)** | Internet Scanners Allowlist | Scanners legítimos |
+| **Antivírus (fixo)** | Bitdefender, ESET, Kaspersky | Endpoint Protection |
 
 ### 🎯 Exemplo Prático
 
-**Cenário**: O IP `8.8.8.8` (Google DNS) aparece em uma lista de IPs maliciosos.
+**Cenário 1:** O IP `8.8.8.8` (Google DNS) aparece em uma lista de IPs maliciosos.
 
-- ❌ **Sem allowlist**: O IP seria bloqueado, e você perderia acesso ao DNS do Google
-- ✅ **Com allowlist**: O IP é removido automaticamente da blocklist, mantendo seu DNS funcionando
+- ❌ **Sem allowlist:** o IP seria bloqueado, e você perderia acesso ao DNS do Google
+- ✅ **Com allowlist:** o IP é removido automaticamente da blocklist, mantendo seu DNS funcionando
+
+**Cenário 2:** O IP `34.98.103.74` (Google Cloud, hospedando um serviço interno) aparece em uma blocklist.
+
+- ❌ **Sem allowlist:** o IP seria bloqueado
+- ✅ **Com allowlist:** o IP é removido porque a faixa `34.98.64.0/18` (Google Cloud) está coberta
 
 ### 🛡️ Como Funciona
 
-1. **Coleta**: O script coleta IPs de 25 fontes diferentes
-2. **Filtragem**: Antes de adicionar à blocklist, todos os IPs são verificados
-3. **Allowlist**: Se um IP estiver na allowlist, ele é **automaticamente removido** da blocklist
-4. **Resultado**: Você nunca bloqueia acidentalmente serviços como Google, AWS, Microsoft ou Cloudflare
+1. **Coleta** — o script baixa as fontes de threat intelligence (com cache local 12-24h)
+2. **Allowlist** — os CIDRs das 18 allowlists são consolidados em redes `/24` protegidas
+3. **Filtragem** — IPs/CIDRs que caem em faixa protegida são **descartados antes** de entrar no pipeline
+4. **Agregação** — os IPs restantes são agrupados por `/24` e recebem a menor máscara possível (`/24` a `/30`)
+5. **Score** — cada entrada recebe um score baseado no peso das fontes que a listaram
+6. **Publicação** — ordenado por score, corte em `MaxLinhasArquivo` (300k), gravação atômica + SHA-256
+7. **Envio** — WebDAV CasaOS com verificação pós-envio
+
+---
 
 ## 📊 Fluxo de Processamento
 
 ```mermaid
 graph TD
-    A[25 Fontes de Threat Intelligence] --> B[Coleta de IPs]
-    B --> C[Verificar Allowlist]
-    C --> D{IP está na Allowlist?}
-    D -->|Sim| E[IP Ignorado - Não será bloqueado]
-    D -->|Nao| F[IP Adicionado à Blocklist]
-	    F --> G[IpThreatDrop.txt]
-    E --> H[allowlist.txt]
-    G --> I[GitHub]
-    H --> I
+    A[21+ Fontes de Threat Intelligence] --> B[Coleta com cache]
+    B --> C{Fonte ativa?}
+    C -->|Não| X[Ignorada]
+    C -->|Sim| D[Download + Parse]
+    D --> E[Deduplicação + Score]
+    E --> F{IP em allowlist?}
+    F -->|Sim| G[Descartado]
+    F -->|Não| H[Agregação /24-/30]
+    H --> I[IpThreatDrop.txt]
+    G --> J[allowlist.txt]
+    I --> K[WebDAV CasaOS]
+    I --> L[GitHub]
+    J --> L
 ```
 
 ## 📦 Lista Completa de Fontes (25)
 
-### 🔵 OTX AlienVault (5 listas)
-| # | Nome                              | ID do Pulse       |
-|---|-----------------------------------|-------------------|
-| 1 | HoneyAI_HTTP_Honeypot             | `69ebf361c06a57718d0c0838` |
-| 2 | PurpleSynapz                      | `5de8ad9a8b95247cfa55def7` |
-| 3 | HoneyAI_Network_Services_Attack_Feed | `6a3407d69c9a31c90e0debe2` |
-| 4 | Federal_Agencies_Warn             | `6a6ab0b45dd9e2b4b1972bca` |
-| 5 | DatasoftComnet-AntiSpam           | `62ed397d23b4894198f2816e` |
-
-### 🟢 Listas Tradicionais (20)
-
-#### Spamhaus & Emerging Threats
-| #  | Nome                    | Descrição                          |
-|----|-------------------------|------------------------------------|
-| 6  | IpThreatDrop            | Blocos CIDR de redes maliciosas    |
-| 7  | Emerging Threats        | IPs comprometidos                  |
-
-#### Abuse.ch & Blocklist.de
-| #  | Nome                          | Descrição                              |
-|----|-------------------------------|----------------------------------------|
-| 8  | Feodo Tracker                 | IPs de C&C e botnets                   |
-| 9  | blocklist.de (all)            | Lista completa de atacantes            |
-| 10 | blocklist.de (bruteforce)     | IPs com tentativas de força bruta      |
-
-#### Score & Intelligence
-| #  | Nome              | Descrição                          |
-|----|-------------------|------------------------------------|
-| 11 | CINS Score        | IPs com pontuação de risco         |
-| 12 | public-xlogic     | IPs maliciosos                     |
-
-#### DShield & Defense
-| #  | Nome              | Descrição                          |
-|----|-------------------|------------------------------------|
-| 13 | DShield           | IPs reportados ao DShield          |
-| 14 | Binary Defense    | Lista de banimento                 |
-
-#### OpenDBL (5 listas)
-| #  | Nome                              | Descrição                              |
-|----|-----------------------------------|----------------------------------------|
-| 15 | OpenDBL - blocklistde-all         | Lista completa                         |
-| 16 | OpenDBL - bruteforce              | Tentativas de força bruta              |
-| 17 | OpenDBL - tor-exit                | Nós de saída Tor                       |
-| 18 | OpenDBL - etknown                 | IPs conhecidos                         |
-| 19 | OpenDBL - ipsum                   | IPs maliciosos                         |
-
-#### Threat Intel & Locais
-| #  | Nome                        | Descrição                              |
-|----|-----------------------------|----------------------------------------|
-| 20 | Ziyadnz Threat Intel       | Feed de inteligência                   |
-| 21 | Netlas                      | IPs maliciosos                         |
-
-#### Governo & Abuse
-| #  | Nome                          | Descrição                              |
-|----|-------------------------------|----------------------------------------|
-| 22 | SERPRO Blocklist             | Lista do SERPRO                        |
-| 23 | ThreatFox (abuse.ch)         | IPs da ThreatFox                       |
-
-#### GreenSnow
-| #  | Nome          | URL                                              | Descrição                          |
-|----|---------------|--------------------------------------------------|------------------------------------|
-| 24 | GreenSnow     | `https://blocklist.greensnow.co/greensnow.txt`   | Lista de IPs maliciosos (ataques, bruteforce, etc.) |
-
-#### SpydiSec
-| #  | Nome          | URL                                              | Descrição                          |
-|----|---------------|--------------------------------------------------|------------------------------------|
-| 25 | SpydiSec      | `https://spydisec.com/maliciousips.txt`          | Blocklist IP completa (curated multi-source) |
-
-### Categorias de Origem
 Os IPs e CIDRs são marcados com a origem no arquivo:
 
-- `OTX_*`: Fontes do AlienVault OTX  
-- `spamhaus-drop`: IpThreatDrop  
-- `emergingthreats`: Emerging Threats  
-- `blocklist.de`: blocklist.de  
-- `cins`: CINS Score  
-- `dshield`: DShield  
-- `opendbl-*`: OpenDBL  
-- `threatfox`: ThreatFox (abuse.ch)  
-- `bruteforceblocker`: BruteforceBlocker  
-- `serpro`: SERPRO Blocklist  
-- `netlas`: Netlas  
-- `ziyadnz`: Ziyadnz Threat Intel  
-- `greensnow`: GreenSnow  
-- `spydisec`: SpydiSec  
+-spamhaus-drop: Spamhaus DROP
+-blocklist.brute: blocklist.de (bruteforce)
+-binarydefense: Binary Defense
+-opendbl-tor: OpenDBL tor-exit
+-ipsum-github: IPsum (stamparm)
+-netlas: Netlas
+-nra-osint: NRA OSINT
+-nra-sentinel-critical: NRA High Critical
+-abuseipdb-borestad: AbuseIPDB (Borestad)
+-cps-avanzato-c2: CriticalPath Security (Avanzato)
+-cps-collected-iocs: CriticalPath Security (Collected IOCs)
+-bitwire-outbound: Bitwire Outbound
+-cins: CINS Score
+-public-xlogic: Public Xlogic
+-ipinsights: IP Insights
+-dshield: DShield
+-serpro: SERPRO Blocklist
+-threatfox: ThreatFox (abuse.ch)
+-greensnow: GreenSnow
+-spydisec: SpydiSec
+-c2intel-30d: C2IntelFeeds
+-crowdsec-1 / crowdsec-2 / crowdsec-3: CrowdSec
+-abuseipdb: AbuseIPDB (API)
 
 ## 🚀 Como Usar
 
@@ -191,23 +170,23 @@ Automática: a cada 12 horas via CRON.
 ### 📝 Formato do Arquivo
 
 ```
-<IP ou CIDR> # <origem> [informações adicionais]
+<IP ou CIDR> # score=<N> <origem1,origem2,...>
 
 IPs individuais (não agregados)
-66.132.172.5 # binarydefense
-66.132.172.100 # threatfox
-66.132.172.200 # serpro,blocklist.de
+66.132.172.5 # score=4.0 binarydefense
+66.132.172.100 # score=5.0 threatfox
+66.132.172.200 # score=7.5 serpro,blocklist.brute,cins
 
 Sub-redes agregadas com máscaras dinâmicas
-66.132.186.0/24 # subnet-agregado(188_IPs) binarydefense,cins,...
-66.132.195.0/26 # subnet-agregado(45_IPs) opendbl-blocklistde,serpro,...
-66.132.200.0/30 # subnet-agregado(4_IPs) threatfox,ziyadnz,...
-66.132.210.32/29 # subnet-agregado(6_IPs) OTX_HoneyAI_Network_Services_Attack_Feed,...
+66.132.186.0/24 # score=12.0 subnet-agregado(188_IPs) binarydefense,cins,threatfox,serpro
+66.132.195.0/26 # score=8.0 subnet-agregado(45_IPs) opendbl-tor,serpro
+66.132.200.0/30 # score=9.5 subnet-agregado(4_IPs) threatfox,cps-avanzato-c2
+66.132.210.32/29 # score=10.0 subnet-agregado(6_IPs) OTX_HoneyAI_Network_Services_Attack_Feed,cps-avanzato-c2
 ```
 
 ### 🔧 Como os Dados São Coletados
 
-Os dados são gerados automaticamente por um script PowerShell que unifica todas as 24 fontes.
+Os dados são gerados automaticamente por um script PowerShell v3.15.8 que unifica todas as fontes.
 
 **Script:** Blocklist Unifier
 
@@ -218,27 +197,87 @@ Os dados são gerados automaticamente por um script PowerShell que unifica todas
 
 ### ✨ Características do Script
 
-- 🔒 25 fontes de threat intelligence ativas
-- 🚀 Coleta paralela com timeout e retry automático
-- 🧹 Deduplicação inteligente com agregação de sub-redes /24, /25, /26, /27, /28, /29,/30
-- 📊 Logs rotativos (manhã/tarde) com retenção de 1 dia
-- 🛡️ Suporte OTX AlienVault via API oficial (com paginação)
-- 📝 Histórico dos últimos 3 dias
-### ⚠️ Aviso
+-🔒 21+ fontes ativas (Sources + CacheSources + AuthSources)
+
+🚀 Coleta com timeout e retry automático (3 tentativas com b-ackoff)
+
+-🧹 Deduplicação inteligente com agregação de sub-redes /24 a /30
+
+-📊 Score de ameaça por concordância entre fontes
+
+-🛡️ Allowlist de 18 fontes (16 corporativas + antivírus)
+
+-🕐 Cache local de 12-24h para fontes lentas
+
+-📝 Logs rotativos (manhã/tarde) com retenção configurável
+
+-🔐 Auto-recuperação do config.json via config.json.bak
+
+-☁️ Envio WebDAV com verificação pós-envio por SHA-256
+
+### 🛡️ Segurança
 
 Esta lista é fornecida "como está", sem garantias de qualquer tipo. Recomenda-se:
 
-- ✅ Testar antes de usar em produção
-- ✅ Manter backups regulares
-- ✅ Verificar periodicamente a precisão dos dados
-- ✅ Monitorar falsos positivos
-- ✅ Ter um plano de contingência
+-✅ TLS 1.2 + 1.3 (fallback automático para schannel do Windows)
+
+-✅ Instância única via mutex global (evita execuções concorrentes)
+
+-✅ Anti-envenenamento de feed (descarta CIDRs maiores que /16, exceto exceções)
+
+-✅ Validação final de formato antes de publicar
+
+-✅ Gravação atômica (temp + move)
+
+-✅ SHA-256 do arquivo gerado
+
+-✅ Verificação pós-envio no WebDAV (SHA-256 remoto confere)
+
+-✅ Auto-recuperação do config.json via config.json.bak
+
+-✅ Auditoria de ACL dos arquivos de credencial
+
+-✅ Códigos de saída para Zabbix / Task Scheduler
 
 O uso desta lista é de inteira responsabilidade do usuário.
 
+### ⚠️ Aviso
+Esta lista é fornecida "como está", sem garantias de qualquer tipo. Recomenda-se:
+
+-✅ Testar antes de usar em produção
+
+-✅ Manter backups regulares
+
+-✅ Verificar periodicamente a precisão dos dados
+
+-✅ Monitorar falsos positivos
+
+-✅ Ter um plano de contingência
+
+O uso desta lista é de inteira responsabilidade do usuário
 ### 📜 Licença
 
-Este conjunto de dados é fornecido sob a licença MIT. As fontes originais podem ter suas próprias licenças.
+MIT License
+
+Copyright (c) 2026 marciosx
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 MIT License - Copyright (c) 2026 marciosx
 
@@ -254,7 +293,8 @@ MIT License - Copyright (c) 2026 marciosx
 ### Arquivo completo
 ```bash
 # Allowlist (serviços críticos)
-wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/allowlist.txt
+wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
+curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
 
 # Blocklist completa (última versão)
 wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
