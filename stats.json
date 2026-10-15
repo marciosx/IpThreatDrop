@@ -6,11 +6,11 @@
   "duplicados": 476504,
   "linhas_arquivo": 285320,
   "subredes_agregadas": 174,
-  "tamanho_kb": 14676,
+  "tamanho_kb": 14680,
   "publicado_em": {
-    "utc": "2026-10-15T21:49:52Z",
-    "local": "2026-10-15T18:49:52-03:00",
-    "unix": 1792100992
+    "utc": "2026-10-15T23:52:29Z",
+    "local": "2026-10-15T20:52:29-03:00",
+    "unix": 1792108349
   },
   "status": {
     "nivel": "atencao",
@@ -65,15 +65,15 @@
     "antivirus": [ "Bitdefender", "ESET", "Kaspersky" ]
   },
   "variacao": {
-    "linhas_anterior": 282797,
-    "linhas_diferenca": 2523,
-    "linhas_percentual": 0.89,
-    "ips_unicos_anterior": 373324,
-    "ips_unicos_diferenca": 1507,
-    "ips_unicos_percentual": 0.40,
-    "adicionados": 8504,
-    "removidos": 5981,
-    "rotatividade_percentual": 5.1
+    "linhas_anterior": 285320,
+    "linhas_diferenca": 0,
+    "linhas_percentual": 0.00,
+    "ips_unicos_anterior": 374831,
+    "ips_unicos_diferenca": 0,
+    "ips_unicos_percentual": 0.00,
+    "adicionados": 0,
+    "removidos": 0,
+    "rotatividade_percentual": 0.0
   },
   "integridade": {
     "md5": "b979089600b786b63f6a3a81fc83f5f4",
@@ -83,6 +83,7 @@
     "blocklist": "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt",
     "allowlist": "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/allowlist.txt",
     "stats": "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json",
+    "historico": "https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/historico.csv",
     "repositorio": "https://github.com/marciosx/IpThreatDrop"
   },
   "gerado_por": "gitdnssrv"
