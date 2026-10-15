@@ -8,9 +8,9 @@
   "subredes_agregadas": 202,
   "tamanho_kb": 14240,
   "publicado_em": {
-    "utc": "2026-10-15T11:57:21Z",
-    "local": "2026-10-15T08:57:21-03:00",
-    "unix": 1792065441
+    "utc": "2026-10-15T12:00:26Z",
+    "local": "2026-10-15T09:00:26-03:00",
+    "unix": 1792065626
   },
   "blocklist": {
     "gerada_em_utc": "2026-10-15 08:54:02",
@@ -58,11 +58,11 @@
     "antivirus": [ "Bitdefender", "ESET", "Kaspersky" ]
   },
   "variacao": {
-    "linhas_anterior": 280916,
-    "linhas_diferenca": 1,
+    "linhas_anterior": 280917,
+    "linhas_diferenca": 0,
     "linhas_percentual": 0.00,
-    "ips_unicos_anterior": 373320,
-    "ips_unicos_diferenca": 3,
+    "ips_unicos_anterior": 373323,
+    "ips_unicos_diferenca": 0,
     "ips_unicos_percentual": 0.00
   },
   "integridade": {
