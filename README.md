@@ -100,31 +100,31 @@ graph TD
 
 Os IPs e CIDRs são marcados com a origem no arquivo:
 
-| # | Marca | Fonte |
+| # | Fonte | Fornece |
 |---|-------|-------|
-| 1 | `spamhaus-drop` | Spamhaus DROP |
-| 2 | `blocklist.brute` | blocklist.de (bruteforce) |
-| 3 | `binarydefense` | Binary Defense |
-| 4 | `opendbl-tor` | OpenDBL tor-exit |
-| 5 | `ipsum-github` | IPsum (stamparm) |
-| 6 | `netlas` | Netlas |
-| 7 | `nra-osint` | NRA OSINT |
-| 8 | `nra-sentinel-critical` | NRA High Critical |
-| 9 | `abuseipdb-borestad` | AbuseIPDB (Borestad) |
-| 10 | `cps-avanzato-c2` | CriticalPath Security (Avanzato) |
-| 11 | `cps-collected-iocs` | CriticalPath Security (Collected IOCs) |
-| 12 | `bitwire-outbound` | Bitwire Outbound |
-| 13 | `cins` | CINS Score |
-| 14 | `public-xlogic` | Public Xlogic |
-| 15 | `ipinsights` | IP Insights |
-| 16 | `dshield` | DShield |
-| 17 | `serpro` | SERPRO Blocklist |
-| 18 | `threatfox` | ThreatFox (abuse.ch) |
-| 19 | `greensnow` | GreenSnow |
-| 20 | `spydisec` | SpydiSec |
-| 21 | `c2intel-30d` | C2IntelFeeds |
-| 22 | `crowdsec-1` / `crowdsec-2` / `crowdsec-3` | CrowdSec |
-| 23 | `abuseipdb` | AbuseIPDB (API) |
+| 1 | `spamhaus-drop` | Blocos CIDR de redes sequestradas e sob controle de criminosos |
+| 2 | `blocklist.brute` | IPs que tentaram força bruta em SSH, FTP, mail, etc. |
+| 3 | `binarydefense` | Lista de banimento de IPs maliciosos observados em honeypots |
+| 4 | `opendbl-tor` | Nós de saída da rede Tor (anonimização) |
+| 5 | `ipsum-github` | Agregação multi-fonte com nível de confiança (1-10) |
+| 6 | `netlas` | IPs maliciosos  |
+| 7 | `nra-osint` | Reputação OSINT de IPs com atividade suspeita |
+| 8 | `nra-sentinel-critical` | IPs com criticidade alta em feeds Sentinel |
+| 9 | `abuseipdb-borestad` | IPs reportados por abuso nos últimos 30 dias |
+| 10 | `cps-avanzato-c2` | IPs de C2 (Command & Control) do feed Avanzato |
+| 11 | `cps-collected-iocs` | IOCs coletados de múltiplas fontes do CPS |
+| 12 | `bitwire-outbound` | IPs com tráfego malicioso de saída (exfiltração) |
+| 13 | `cins` | IPs com pontuação de risco baseada em reputação |
+| 14 | `public-xlogic` | IPs maliciosos (feed público Xlogic) |
+| 15 | `ipinsights` | Blocklist agregada do serviço IP Insights |
+| 16 | `dshield` | IPs reportados ao SANS ISC DShield (top atacantes) |
+| 17 | `serpro` | Blocklist oficial do SERPRO (Segurança Nacional BR) |
+| 18 | `threatfox` | IPs de C2 e malware reportados ao abuse.ch|
+| 19 | `greensnow` | IPs maliciosos (ataques, bruteforce, scans)|
+| 20 | `spydisec` | Blocklist curada de alta confiança |
+| 21 | `c2intel-30d` | IPs de C2 ativos nos últimos 30 dias |
+| 22 | `crowdsec-1` / `crowdsec-2` / `crowdsec-3` | IPs maliciosos detectados por sensores CrowdSec |
+| 23 | `abuseipdb` | IPs reportados por abuso via API oficial |
 
 ## 🚀 Como Usar
 
