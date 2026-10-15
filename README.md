@@ -1,4 +1,3 @@
-
 # 🛡️ IpThreatDrop - Blocklist Unificada
 
 <p align="center">
@@ -151,6 +150,7 @@ curl -s https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDro
         iptables -A INPUT -s $ip -j DROP
     done
 ```
+
 **Em Python**
 
 ```python
@@ -198,71 +198,43 @@ Os dados são gerados automaticamente por um script PowerShell v3.15.8 que unifi
 
 **Script:** Blocklist Unifier
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://microsoft.com/powershell)
-[![Version](https://img.shields.io/badge/version-3.2-green.svg)](CHANGELOG.md)
+- 🔒 21+ fontes ativas (Sources + CacheSources + AuthSources)
+- 🚀 Coleta com timeout e retry automático (3 tentativas com backoff)
+- 🧹 Deduplicação inteligente com agregação de sub-redes `/24` a `/30`
+- 📊 Score de ameaça por concordância entre fontes
+- 🛡️ Allowlist de 18 fontes (16 corporativas + antivírus)
+- 🕐 Cache local de 12-24h para fontes lentas
+- 📝 Logs rotativos (manhã/tarde) com retenção configurável
+- 🔐 Auto-recuperação do `config.json` via `config.json.bak`
+- ☁️ Envio WebDAV com verificação pós-envio por SHA-256
 
+### 🛡️ Segurança do Script
 
-### ✨ Características do Script
+O script implementa múltiplas camadas de proteção:
 
--🔒 21+ fontes ativas (Sources + CacheSources + AuthSources)
-
-🚀 Coleta com timeout e retry automático (3 tentativas com b-ackoff)
-
--🧹 Deduplicação inteligente com agregação de sub-redes /24 a /30
-
--📊 Score de ameaça por concordância entre fontes
-
--🛡️ Allowlist de 18 fontes (16 corporativas + antivírus)
-
--🕐 Cache local de 12-24h para fontes lentas
-
--📝 Logs rotativos (manhã/tarde) com retenção configurável
-
--🔐 Auto-recuperação do config.json via config.json.bak
-
--☁️ Envio WebDAV com verificação pós-envio por SHA-256
-
-### 🛡️ Segurança
-
-Esta lista é fornecida "como está", sem garantias de qualquer tipo. Recomenda-se:
-
--✅ TLS 1.2 + 1.3 (fallback automático para schannel do Windows)
-
--✅ Instância única via mutex global (evita execuções concorrentes)
-
--✅ Anti-envenenamento de feed (descarta CIDRs maiores que /16, exceto exceções)
-
--✅ Validação final de formato antes de publicar
-
--✅ Gravação atômica (temp + move)
-
--✅ SHA-256 do arquivo gerado
-
--✅ Verificação pós-envio no WebDAV (SHA-256 remoto confere)
-
--✅ Auto-recuperação do config.json via config.json.bak
-
--✅ Auditoria de ACL dos arquivos de credencial
-
--✅ Códigos de saída para Zabbix / Task Scheduler
-
-O uso desta lista é de inteira responsabilidade do usuário.
+- ✅ **TLS 1.2 + 1.3** (fallback automático para schannel do Windows)
+- ✅ **Instância única** via mutex global (evita execuções concorrentes)
+- ✅ **Anti-envenenamento de feed** (descarta CIDRs maiores que `/16`, exceto exceções)
+- ✅ **Validação final de formato** antes de publicar
+- ✅ **Gravação atômica** (temp + move)
+- ✅ **SHA-256** do arquivo gerado
+- ✅ **Verificação pós-envio** no WebDAV (SHA-256 remoto confere)
+- ✅ **Auto-recuperação** do `config.json` via `config.json.bak`
+- ✅ **Auditoria de ACL** dos arquivos de credencial
+- ✅ **Códigos de saída** para Zabbix / Task Scheduler
 
 ### ⚠️ Aviso
-Esta lista é fornecida "como está", sem garantias de qualquer tipo. Recomenda-se:
 
--✅ Testar antes de usar em produção
+Esta lista é fornecida **"como está"**, sem garantias de qualquer tipo. Recomenda-se:
 
--✅ Manter backups regulares
+- ✅ Testar antes de usar em produção
+- ✅ Manter backups regulares
+- ✅ Verificar periodicamente a precisão dos dados
+- ✅ Monitorar falsos positivos
+- ✅ Ter um plano de contingência
 
--✅ Verificar periodicamente a precisão dos dados
+**O uso desta lista é de inteira responsabilidade do usuário.**
 
--✅ Monitorar falsos positivos
-
--✅ Ter um plano de contingência
-
-O uso desta lista é de inteira responsabilidade do usuário
 ### 📜 Licença
 
 MIT License
@@ -287,25 +259,50 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-MIT License - Copyright (c) 2026 marciosx
+## 📊 Estatísticas
+
+Os números abaixo são atualizados automaticamente a cada execução:
+
+| Métrica | Valor |
+|---------|-------|
+| Total de IPs/CIDRs únicos | [![IPs](https://img.shields.io/badge/dynamic/json?color=orange&label=IPs&query=%24.ips_unicos&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json)](https://github.com/marciosx/IpThreatDrop/blob/main/stats.json) |
+| Tamanho do arquivo | [![Size](https://img.shields.io/badge/dynamic/json?color=blue&label=Size&query=%24.tamanho_kb&url=https%3A%2F%2Fraw.githubusercontent.com%2Fmarciosx%2FIpThreatDrop%2Fmain%2Fstats.json&suffix=KB)](https://github.com/marciosx/IpThreatDrop/blob/main/stats.json) |
+| Última atualização | [![Last commit](https://img.shields.io/github/last-commit/marciosx/IpThreatDrop)](https://github.com/marciosx/IpThreatDrop/commits/main) |
+
+## 🐛 Bugs e Sugestões
+
+Encontrou um problema ou tem uma sugestão?
+
+- **Reportar bug:** [Abra uma issue](https://github.com/marciosx/IpThreatDrop/issues/new) com:
+  - Descrição do problema
+  - IP/fonte afetada (se aplicável)
+  - Comando/output do erro
+- **Sugerir nova fonte:** abra uma issue com o nome da fonte e URL
+- **Contribuir:** [Pull requests](https://github.com/marciosx/IpThreatDrop/pulls) são bem-vindos
 
 ## 📧 Contato
 
-- Issues: GitHub Issues
-- Email: marciosx@gmail.com
+- **Issues:** [GitHub Issues](https://github.com/marciosx/IpThreatDrop/issues)
+- **Email:** marciosx@gmail.com
 
 ## 🎯 Download
 
+### Allowlist (serviços críticos)
 
-
-### Arquivo completo
 ```bash
-# Allowlist (serviços críticos)
+wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/allowlist.txt
+curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/allowlist.txt
+```
+
+### Blocklist completa (última versão)
+
+```bash
 wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
 curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
+```
 
-# Blocklist completa (última versão)
-wget https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
-curl -O https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/IpThreatDrop.txt
+### Stats (última execução)
 
+```bash
+curl -s https://raw.githubusercontent.com/marciosx/IpThreatDrop/main/stats.json | jq
 ```
