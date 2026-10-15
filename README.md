@@ -52,6 +52,7 @@ A allowlist é um conjunto de IPs e CIDRs que **nunca serão bloqueados**, mesmo
 | **Imperva** | WAF, DDoS | Segurança |
 | **Stripe** | Webhooks, API | Pagamentos |
 | **Antivírus (fixo)** | Bitdefender, ESET, Kaspersky, etc. | Endpoint Protection |
+| **DNS Pblicos (fixo)** | Google, Cloudflare. OpenDNS, Level3, etc... | Resolução DNS pública |
 
 ### 🎯 Exemplo Prático
 
