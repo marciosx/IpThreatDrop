@@ -1,2 +1,3 @@
 data_utc,linhas,ips_unicos,coletado,duplicados,duplicados_pct,ips_individuais,blocos_cidr,agregados,score_medio,score_max,adicionados,removidos,rotatividade_pct,utilizacao_pct,fontes_ativas,tamanho_kb,status
 2026-10-15T23:52:30Z,285320,374831,1415972,476504,33.65,274170,11150,174,5.2,48,0,0,0.0,95.1,25,14680,atencao
+2026-10-16T01:00:20Z,285320,374831,1415972,476504,33.65,274170,11150,174,5.2,48,0,0,0.0,95.1,25,14680,atencao
