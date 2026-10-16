@@ -8,13 +8,13 @@
   "subredes_agregadas": 179,
   "tamanho_kb": 14664,
   "publicado_em": {
-    "utc": "2026-10-16T19:00:36Z",
-    "local": "2026-10-16T16:00:36-03:00",
-    "unix": 1792177236
+    "utc": "2026-10-16T21:00:23Z",
+    "local": "2026-10-16T18:00:23-03:00",
+    "unix": 1792184423
   },
   "status": {
     "nivel": "atencao",
-    "alertas": [ "Utilização do limite em 95,0% (acima de 95%)" ]
+    "alertas": [ "Utilização do limite em 95,0% (acima de 95%)", "Blocklist gerada há 12h05min (acima de 12h)" ]
   },
   "blocklist": {
     "gerada_em_utc": "2026-10-16 08:54:42",
