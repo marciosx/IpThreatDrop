@@ -1,64 +1,64 @@
 {
   "schema_version": 3,
   "projeto": "IpThreatDrop",
-  "ips_unicos": 373130,
-  "coletado": 1335222,
-  "duplicados": 459939,
-  "linhas_arquivo": 300000,
-  "subredes_agregadas": 168,
-  "tamanho_kb": 15324,
+  "ips_unicos": 310539,
+  "coletado": 1245267,
+  "duplicados": 445075,
+  "linhas_arquivo": 244418,
+  "subredes_agregadas": 175,
+  "tamanho_kb": 13284,
   "publicado_em": {
-    "utc": "2026-10-27T04:45:09Z",
-    "local": "2026-10-27T01:45:09-03:00",
-    "unix": 1793076309
+    "utc": "2026-10-27T12:45:07Z",
+    "local": "2026-10-27T09:45:07-03:00",
+    "unix": 1793105107
   },
   "status": {
-    "nivel": "critico",
-    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "5.759 linhas cortadas por menor score (limite atingido)" ]
+    "nivel": "atencao",
+    "alertas": [ "Variação brusca de 18,53% no total de linhas", "Rotatividade alta: 25,7% da lista mudou", "Fontes ativas sem entradas: nra-osint", "Fontes sem dados na coleta: nra-osint" ]
   },
   "blocklist": {
-    "gerada_em_utc": "2026-10-27 01:01:23",
+    "gerada_em_utc": "2026-10-27 08:42:51",
     "modo": "menor bloco CIDR que cobre todos os IPs do /24 (de /24 a /30, nunca /32), com desce-mascara",
     "densidade_minima_pct": 0,
-    "linhas_publicadas": 300000,
+    "linhas_publicadas": 244418,
     "limite_linhas": 300000,
-    "utilizacao_limite_pct": 100.0,
-    "linhas_cortadas_por_score": 5759,
+    "utilizacao_limite_pct": 81.5,
+    "linhas_cortadas_por_score": 0,
     "score_minimo": 3,
-    "tamanho_mb": 15.0
+    "tamanho_mb": 13.0
   },
   "coleta": {
-    "coletado": 1335222,
-    "duplicados": 459939,
-    "duplicados_percentual": 34.45,
-    "ips_cidrs_unicos": 373130
+    "coletado": 1245267,
+    "duplicados": 445075,
+    "duplicados_percentual": 35.74,
+    "ips_cidrs_unicos": 310539
   },
   "composicao": {
-    "ips_individuais": 288668,
-    "subredes_24": 995,
-    "subredes_outras": 10176,
-    "subredes_agregadas": 168,
-    "mascaras_agregadas": { "/29": 0, "/25": 3, "/30": 0, "/26": 0, "/27": 0, "/24": 165, "/28": 0 },
-    "blocos_cidr_total": 11332,
-    "blocos_por_mascara": { "/12": {"total": 3, "agregados": 0, "minimo_para_agregar": null}, "/14": {"total": 2, "agregados": 0, "minimo_para_agregar": null}, "/15": {"total": 4, "agregados": 0, "minimo_para_agregar": null}, "/16": {"total": 114, "agregados": 0, "minimo_para_agregar": null}, "/17": {"total": 21, "agregados": 0, "minimo_para_agregar": null}, "/18": {"total": 42, "agregados": 0, "minimo_para_agregar": null}, "/19": {"total": 67, "agregados": 0, "minimo_para_agregar": null}, "/20": {"total": 115, "agregados": 0, "minimo_para_agregar": null}, "/21": {"total": 90, "agregados": 0, "minimo_para_agregar": null}, "/22": {"total": 337, "agregados": 0, "minimo_para_agregar": null}, "/23": {"total": 178, "agregados": 0, "minimo_para_agregar": null}, "/24": {"total": 1153, "agregados": 165, "minimo_para_agregar": 100}, "/25": {"total": 80, "agregados": 3, "minimo_para_agregar": 64}, "/26": {"total": 98, "agregados": 0, "minimo_para_agregar": 32}, "/27": {"total": 102, "agregados": 0, "minimo_para_agregar": 16}, "/28": {"total": 149, "agregados": 0, "minimo_para_agregar": 8}, "/29": {"total": 321, "agregados": 0, "minimo_para_agregar": 3}, "/30": {"total": 767, "agregados": 0, "minimo_para_agregar": 2}, "/31": {"total": 3556, "agregados": 0, "minimo_para_agregar": null}, "/32": {"total": 4133, "agregados": 0, "minimo_para_agregar": null} }
+    "ips_individuais": 236036,
+    "subredes_24": 738,
+    "subredes_outras": 7476,
+    "subredes_agregadas": 175,
+    "mascaras_agregadas": { "/29": 0, "/25": 3, "/30": 0, "/26": 0, "/27": 0, "/24": 172, "/28": 0 },
+    "blocos_cidr_total": 8382,
+    "blocos_por_mascara": { "/12": {"total": 3, "agregados": 0, "minimo_para_agregar": null}, "/14": {"total": 2, "agregados": 0, "minimo_para_agregar": null}, "/15": {"total": 4, "agregados": 0, "minimo_para_agregar": null}, "/16": {"total": 114, "agregados": 0, "minimo_para_agregar": null}, "/17": {"total": 21, "agregados": 0, "minimo_para_agregar": null}, "/18": {"total": 42, "agregados": 0, "minimo_para_agregar": null}, "/19": {"total": 67, "agregados": 0, "minimo_para_agregar": null}, "/20": {"total": 109, "agregados": 0, "minimo_para_agregar": null}, "/21": {"total": 83, "agregados": 0, "minimo_para_agregar": null}, "/22": {"total": 322, "agregados": 0, "minimo_para_agregar": null}, "/23": {"total": 143, "agregados": 0, "minimo_para_agregar": null}, "/24": {"total": 903, "agregados": 172, "minimo_para_agregar": 100}, "/25": {"total": 54, "agregados": 3, "minimo_para_agregar": 64}, "/26": {"total": 55, "agregados": 0, "minimo_para_agregar": 32}, "/27": {"total": 60, "agregados": 0, "minimo_para_agregar": 16}, "/28": {"total": 78, "agregados": 0, "minimo_para_agregar": 8}, "/29": {"total": 166, "agregados": 0, "minimo_para_agregar": 3}, "/30": {"total": 376, "agregados": 0, "minimo_para_agregar": 2}, "/31": {"total": 1649, "agregados": 0, "minimo_para_agregar": null}, "/32": {"total": 4131, "agregados": 0, "minimo_para_agregar": null} }
   },
   "score": {
-    "maximo": 41,
-    "medio": 4.9,
+    "maximo": 38,
+    "medio": 5.1,
     "distribuicao": {
-      "ate_4": 206596,
-      "de_5_a_9": 74673,
-      "10_ou_mais": 18731
+      "ate_4": 167549,
+      "de_5_a_9": 59591,
+      "10_ou_mais": 17278
     }
   },
   "filtros": {
     "resumo_disponivel": true,
-    "resumo_gerado_em": "27/10/2026 01:01:47",
-    "nuvem_cdn_removidos": 12405,
-    "entradas_redundantes_removidas": 19225,
+    "resumo_gerado_em": "27/10/2026 08:43:14",
+    "nuvem_cdn_removidos": 11739,
+    "entradas_redundantes_removidas": 17050,
     "cidrs_grandes_descartados": 0,
     "linhas_invalidas_removidas": 0,
-    "prefixos_24_mantidos_individuais": 47,
+    "prefixos_24_mantidos_individuais": 40,
     "limiares_agregacao": { "/24": 100, "/25": 64, "/26": 32, "/27": 16, "/28": 8, "/29": 3, "/30": 2 }
   },
   "fontes": {
@@ -67,11 +67,11 @@
     "pulses_otx": 5,
     "otx_ativas": 0,
     "otx_total": 0,
-    "top_por_volume": { "ipinsights": 188513, "ipsum-github": 81832, "bitwire-outbound": 80898, "abuseipdb-borestad": 80833, "nra-osint": 76208, "cps-collected-iocs": 26557, ".5": 17554, "serpro": 16307, "threatfox": 13508, "cps-avanzato-c2": 8890 },
-    "contribuicao": [ {"nome": "nra-osint", "total_bruto": 83818, "exclusivos": 66588, "exclusivos_mantidos": 66588, "na_lista": 76208}, {"nome": "bitwire-outbound", "total_bruto": 88474, "exclusivos": 36832, "exclusivos_mantidos": 36832, "na_lista": 80898}, {"nome": "cps-avanzato-c2", "total_bruto": 13778, "exclusivos": 10870, "exclusivos_mantidos": 10870, "na_lista": 8890}, {"nome": "public-xlogic", "total_bruto": 3606, "exclusivos": 3347, "exclusivos_mantidos": 3347, "na_lista": 3156}, {"nome": "crowdsec-1", "total_bruto": 6665, "exclusivos": 1937, "exclusivos_mantidos": 1937, "na_lista": 4244}, {"nome": "spamhaus-drop", "total_bruto": 1684, "exclusivos": 1684, "exclusivos_mantidos": 1684, "na_lista": 1637}, {"nome": "spydisec", "total_bruto": 1887, "exclusivos": 618, "exclusivos_mantidos": 618, "na_lista": 1615}, {"nome": "serpro", "total_bruto": 25973, "exclusivos": 603, "exclusivos_mantidos": 603, "na_lista": 16307}, {"nome": "greensnow", "total_bruto": 5359, "exclusivos": 252, "exclusivos_mantidos": 252, "na_lista": 3314}, {"nome": "cins", "total_bruto": 12215, "exclusivos": 119, "exclusivos_mantidos": 119, "na_lista": 5494}, {"nome": "nra-sentinel-critical", "total_bruto": 126, "exclusivos": 72, "exclusivos_mantidos": 72, "na_lista": 103}, {"nome": "abuseipdb", "total_bruto": 8855, "exclusivos": 35, "exclusivos_mantidos": 35, "na_lista": 5766}, {"nome": "crowdsec-3", "total_bruto": 4336, "exclusivos": 22, "exclusivos_mantidos": 22, "na_lista": 2143}, {"nome": "dshield", "total_bruto": 20, "exclusivos": 20, "exclusivos_mantidos": 20, "na_lista": 10}, {"nome": "ipsum-github", "total_bruto": 126895, "exclusivos": 7255, "exclusivos_mantidos": 4, "na_lista": 81832}, {"nome": "crowdsec-2", "total_bruto": 410, "exclusivos": 1, "exclusivos_mantidos": 1, "na_lista": 361}, {"nome": "ipinsights", "total_bruto": 682341, "exclusivos": 438881, "exclusivos_mantidos": 0, "na_lista": 188513}, {"nome": "abuseipdb-borestad", "total_bruto": 106492, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 80833}, {"nome": "cps-collected-iocs", "total_bruto": 31904, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 26557}, {"nome": "threatfox", "total_bruto": 16114, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 13508}, {"nome": "netlas", "total_bruto": 57583, "exclusivos": 56009, "exclusivos_mantidos": 0, "na_lista": 1333}, {"nome": "blocklist.brute", "total_bruto": 1026, "exclusivos": 12, "exclusivos_mantidos": 0, "na_lista": 802}, {"nome": "opendbl-tor", "total_bruto": 1228, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 512}, {"nome": "binarydefense", "total_bruto": 364, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 215}, {"nome": "c2intel-30d", "total_bruto": 215, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 203} ],
-    "sem_entradas_exclusivas": [ "ipinsights", "abuseipdb-borestad", "cps-collected-iocs", "threatfox", "netlas", "blocklist.brute", "opendbl-tor", "binarydefense", "c2intel-30d" ],
-    "sem_entradas": [  ],
-    "sem_dados_na_coleta": [  ]
+    "top_por_volume": { "ipinsights": 186384, "ipsum-github": 87019, "bitwire-outbound": 82883, "abuseipdb-borestad": 80699, "cps-collected-iocs": 26824, ".5": 17810, "serpro": 16354, "threatfox": 13520, "cps-avanzato-c2": 8895, "abuseipdb": 5771 },
+    "contribuicao": [ {"nome": "bitwire-outbound", "total_bruto": 88474, "exclusivos": 41431, "exclusivos_mantidos": 41431, "na_lista": 82883}, {"nome": "cps-avanzato-c2", "total_bruto": 13778, "exclusivos": 10911, "exclusivos_mantidos": 10911, "na_lista": 8895}, {"nome": "public-xlogic", "total_bruto": 3606, "exclusivos": 3349, "exclusivos_mantidos": 3349, "na_lista": 3375}, {"nome": "crowdsec-1", "total_bruto": 6665, "exclusivos": 1937, "exclusivos_mantidos": 1937, "na_lista": 4243}, {"nome": "spamhaus-drop", "total_bruto": 1684, "exclusivos": 1684, "exclusivos_mantidos": 1684, "na_lista": 1637}, {"nome": "serpro", "total_bruto": 25616, "exclusivos": 1316, "exclusivos_mantidos": 1316, "na_lista": 16354}, {"nome": "spydisec", "total_bruto": 1887, "exclusivos": 633, "exclusivos_mantidos": 633, "na_lista": 1641}, {"nome": "greensnow", "total_bruto": 5359, "exclusivos": 615, "exclusivos_mantidos": 615, "na_lista": 3347}, {"nome": "nra-sentinel-critical", "total_bruto": 126, "exclusivos": 78, "exclusivos_mantidos": 78, "na_lista": 104}, {"nome": "abuseipdb", "total_bruto": 8855, "exclusivos": 46, "exclusivos_mantidos": 46, "na_lista": 5771}, {"nome": "crowdsec-3", "total_bruto": 4336, "exclusivos": 22, "exclusivos_mantidos": 22, "na_lista": 2138}, {"nome": "dshield", "total_bruto": 20, "exclusivos": 20, "exclusivos_mantidos": 20, "na_lista": 10}, {"nome": "cins", "total_bruto": 12215, "exclusivos": 19, "exclusivos_mantidos": 19, "na_lista": 5506}, {"nome": "crowdsec-2", "total_bruto": 410, "exclusivos": 1, "exclusivos_mantidos": 1, "na_lista": 364}, {"nome": "ipinsights", "total_bruto": 676548, "exclusivos": 433572, "exclusivos_mantidos": 0, "na_lista": 186384}, {"nome": "ipsum-github", "total_bruto": 126895, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 87019}, {"nome": "abuseipdb-borestad", "total_bruto": 106492, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 80699}, {"nome": "cps-collected-iocs", "total_bruto": 31906, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 26824}, {"nome": "threatfox", "total_bruto": 16114, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 13520}, {"nome": "netlas", "total_bruto": 57583, "exclusivos": 56062, "exclusivos_mantidos": 0, "na_lista": 1287}, {"nome": "blocklist.brute", "total_bruto": 1040, "exclusivos": 19, "exclusivos_mantidos": 0, "na_lista": 803}, {"nome": "opendbl-tor", "total_bruto": 1224, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 517}, {"nome": "binarydefense", "total_bruto": 364, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 215}, {"nome": "c2intel-30d", "total_bruto": 215, "exclusivos": 0, "exclusivos_mantidos": 0, "na_lista": 203} ],
+    "sem_entradas_exclusivas": [ "ipinsights", "ipsum-github", "abuseipdb-borestad", "cps-collected-iocs", "threatfox", "netlas", "blocklist.brute", "opendbl-tor", "binarydefense", "c2intel-30d" ],
+    "sem_entradas": [ "nra-osint" ],
+    "sem_dados_na_coleta": [ "nra-osint" ]
   },
   "allowlist": {
     "arquivo_presente": true,
@@ -81,19 +81,19 @@
   },
   "variacao": {
     "linhas_anterior": 300000,
-    "linhas_diferenca": 0,
-    "linhas_percentual": 0.00,
-    "ips_unicos_anterior": 374522,
-    "ips_unicos_diferenca": -1392,
-    "ips_unicos_percentual": -0.37,
-    "adicionados": 9069,
-    "removidos": 9069,
-    "rotatividade_percentual": 6.0
+    "linhas_diferenca": -55582,
+    "linhas_percentual": -18.53,
+    "ips_unicos_anterior": 373130,
+    "ips_unicos_diferenca": -62591,
+    "ips_unicos_percentual": -16.77,
+    "adicionados": 10754,
+    "removidos": 66336,
+    "rotatividade_percentual": 25.7
   },
   "integridade": {
-    "md5": "0dfaab2da5cc527c7717d0e8e35d98bf",
-    "sha256": "046242e53f407bdedf566aff64b448cd605fda6a9778cec672bb246a571fdb1c",
-    "sha256_resumo": "046242e53f407bdedf566aff64b448cd605fda6a9778cec672bb246a571fdb1c",
+    "md5": "96c653870b6b9e3abf5a1d2b89fd9df4",
+    "sha256": "5db5bd0653bac2c0c286bd0d51f6f8e599ed8c0c03e6fb13059f3b04209f1c4f",
+    "sha256_resumo": "5db5bd0653bac2c0c286bd0d51f6f8e599ed8c0c03e6fb13059f3b04209f1c4f",
     "confere_com_resumo": true
   },
   "links": {
