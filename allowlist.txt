@@ -3,7 +3,7 @@
 # ==========================================
 # Descrição: IPs que nunca devem ser bloqueados
 # Total de arquivos: 16
-# Data de criação: 2026-10-30 09:10:00
+# Data de criação: 2026-10-30 17:10:01
 # ==========================================
 
 # ==========================================
@@ -73675,5 +73675,5 @@
 # Total de arquivos processados: 16
 # Total de arquivos com erro: 0
 # Total de IPs/CIDRs: 73550
-# Data de criação: 2026-10-30 09:10:18
+# Data de criação: 2026-10-30 17:10:15
 # ==========================================
