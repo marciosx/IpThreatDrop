@@ -8,13 +8,13 @@
   "subredes_agregadas": 1220,
   "tamanho_kb": 15460,
   "publicado_em": {
-    "utc": "2026-11-03T20:45:10Z",
-    "local": "2026-11-03T17:45:10-03:00",
-    "unix": 1793738710
+    "utc": "2026-11-04T12:45:12Z",
+    "local": "2026-11-04T09:45:12-03:00",
+    "unix": 1793796312
   },
   "status": {
     "nivel": "critico",
-    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "7.353 linhas cortadas por menor score (limite atingido)", "Fontes ativas sem entradas: nra-sentinel-critical, bitwire-inbound", "Fontes sem dados na coleta: nra-sentinel-critical, bitwire-inbound (descartada: volume anomalo)" ]
+    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "7.353 linhas cortadas por menor score (limite atingido)", "Fontes ativas sem entradas: nra-sentinel-critical, bitwire-inbound", "Blocklist gerada há 27h12min (acima de 12h)", "Fontes sem dados na coleta: nra-sentinel-critical, bitwire-inbound (descartada: volume anomalo)" ]
   },
   "blocklist": {
     "gerada_em_utc": "2026-11-03 09:33:03",
@@ -83,12 +83,12 @@
     "linhas_anterior": 300000,
     "linhas_diferenca": 0,
     "linhas_percentual": 0.00,
-    "ips_unicos_anterior": 374320,
-    "ips_unicos_diferenca": 6905,
-    "ips_unicos_percentual": 1.84,
-    "adicionados": 6344,
-    "removidos": 6344,
-    "rotatividade_percentual": 4.2
+    "ips_unicos_anterior": 381225,
+    "ips_unicos_diferenca": 0,
+    "ips_unicos_percentual": 0.00,
+    "adicionados": 0,
+    "removidos": 0,
+    "rotatividade_percentual": 0.0
   },
   "integridade": {
     "md5": "ab65e7d432b47e3a1f3dcfe9c4fd71bc",
