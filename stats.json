@@ -8,13 +8,13 @@
   "subredes_agregadas": 1220,
   "tamanho_kb": 15460,
   "publicado_em": {
-    "utc": "2026-11-06T12:45:14Z",
-    "local": "2026-11-06T09:45:14-03:00",
-    "unix": 1793969114
+    "utc": "2026-11-07T04:45:09Z",
+    "local": "2026-11-07T01:45:09-03:00",
+    "unix": 1794026709
   },
   "status": {
     "nivel": "critico",
-    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "7.353 linhas cortadas por menor score (limite atingido)", "Fontes ativas sem entradas: nra-sentinel-critical, bitwire-inbound", "Blocklist gerada há 75h12min (acima de 12h)", "Fontes sem dados na coleta: nra-sentinel-critical, bitwire-inbound (descartada: volume anomalo)" ]
+    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "7.353 linhas cortadas por menor score (limite atingido)", "Fontes ativas sem entradas: nra-sentinel-critical, bitwire-inbound", "Blocklist gerada há 91h12min (acima de 12h)", "Fontes sem dados na coleta: nra-sentinel-critical, bitwire-inbound (descartada: volume anomalo)" ]
   },
   "blocklist": {
     "gerada_em_utc": "2026-11-03 09:33:03",
