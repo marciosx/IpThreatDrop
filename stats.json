@@ -8,13 +8,13 @@
   "subredes_agregadas": 1220,
   "tamanho_kb": 15460,
   "publicado_em": {
-    "utc": "2026-11-08T12:45:14Z",
-    "local": "2026-11-08T09:45:14-03:00",
-    "unix": 1794141914
+    "utc": "2026-11-08T17:36:23Z",
+    "local": "2026-11-08T14:36:23-03:00",
+    "unix": 1794159383
   },
   "status": {
     "nivel": "critico",
-    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "7.353 linhas cortadas por menor score (limite atingido)", "Fontes ativas sem entradas: nra-sentinel-critical, bitwire-inbound", "Blocklist gerada há 123h12min (acima de 12h)", "SHA-256 do IpThreatDrop.txt diverge do resumo.txt (resumo desatualizado ou arquivo alterado)", "Fontes sem dados na coleta: nra-sentinel-critical" ]
+    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "7.353 linhas cortadas por menor score (limite atingido)", "Fontes ativas sem entradas: nra-sentinel-critical, bitwire-inbound", "Blocklist gerada há 128h03min (acima de 12h)", "SHA-256 do IpThreatDrop.txt diverge do resumo.txt (resumo desatualizado ou arquivo alterado)", "Fontes sem dados na coleta: nra-sentinel-critical" ]
   },
   "blocklist": {
     "gerada_em_utc": "2026-11-03 09:33:03",
