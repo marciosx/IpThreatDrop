@@ -8,13 +8,13 @@
   "subredes_agregadas": 1576,
   "tamanho_kb": 15332,
   "publicado_em": {
-    "utc": "2026-11-09T01:13:05Z",
-    "local": "2026-11-08T22:13:05-03:00",
-    "unix": 1794186785
+    "utc": "2026-11-09T12:45:09Z",
+    "local": "2026-11-09T09:45:09-03:00",
+    "unix": 1794228309
   },
   "status": {
     "nivel": "critico",
-    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "176.194 linhas cortadas por menor score (limite atingido)", "Rotatividade alta: 106,4% da lista mudou", "Fontes ativas sem entradas: blocklist.brute, sslbl-c2", "Fontes sem dados na coleta: blocklist.brute, sslbl-c2", "Anti-envenenamento descartou 18 CIDR(s) grande(s)" ]
+    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "176.194 linhas cortadas por menor score (limite atingido)", "Fontes ativas sem entradas: blocklist.brute, sslbl-c2", "Blocklist gerada há 14h35min (acima de 12h)", "Fontes sem dados na coleta: blocklist.brute, sslbl-c2", "Anti-envenenamento descartou 18 CIDR(s) grande(s)" ]
   },
   "blocklist": {
     "gerada_em_utc": "2026-11-08 22:10:01",
@@ -80,15 +80,15 @@
     "antivirus": [ "Bitdefender", "ESET", "Kaspersky" ]
   },
   "variacao": {
-    "linhas_anterior": 300000,
-    "linhas_diferenca": 9000,
-    "linhas_percentual": 3.00,
-    "ips_unicos_anterior": 381225,
-    "ips_unicos_diferenca": 210362,
-    "ips_unicos_percentual": 55.18,
-    "adicionados": 164044,
-    "removidos": 155044,
-    "rotatividade_percentual": 106.4
+    "linhas_anterior": 309000,
+    "linhas_diferenca": 0,
+    "linhas_percentual": 0.00,
+    "ips_unicos_anterior": 591587,
+    "ips_unicos_diferenca": 0,
+    "ips_unicos_percentual": 0.00,
+    "adicionados": 0,
+    "removidos": 0,
+    "rotatividade_percentual": 0.0
   },
   "integridade": {
     "md5": "6aab8c4c46e8105b86e5f3aef93873f0",
