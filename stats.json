@@ -8,13 +8,13 @@
   "subredes_agregadas": 967,
   "tamanho_kb": 14168,
   "publicado_em": {
-    "utc": "2026-11-11T13:00:11Z",
-    "local": "2026-11-11T10:00:11-03:00",
-    "unix": 1794402011
+    "utc": "2026-11-11T13:25:13Z",
+    "local": "2026-11-11T10:25:13-03:00",
+    "unix": 1794403513
   },
   "status": {
     "nivel": "critico",
-    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "245.253 linhas cortadas por menor score (limite atingido)", "Variação brusca de 37,37% no total de linhas", "Rotatividade alta: 195,9% da lista mudou", "Fontes ativas sem entradas: OTX_Federal_Agencies_Warn, OTX_DugganUSA Master Threat Feed, sslbl-c2", "Fontes sem dados na coleta: OTX_Federal_Agencies_Warn, OTX_DugganUSA Master Threat Feed, sslbl-c2", "Anti-envenenamento descartou 31 CIDR(s) grande(s)" ]
+    "alertas": [ "Utilização do limite em 100,0% — risco de corte de entradas", "245.253 linhas cortadas por menor score (limite atingido)", "Fontes ativas sem entradas: OTX_Federal_Agencies_Warn, OTX_DugganUSA Master Threat Feed, sslbl-c2", "Fontes sem dados na coleta: OTX_Federal_Agencies_Warn, OTX_DugganUSA Master Threat Feed, sslbl-c2", "Anti-envenenamento descartou 31 CIDR(s) grande(s)" ]
   },
   "blocklist": {
     "gerada_em_utc": "2026-11-11 08:04:44",
@@ -80,15 +80,15 @@
     "antivirus": [  ]
   },
   "variacao": {
-    "linhas_anterior": 218392,
-    "linhas_diferenca": 81608,
-    "linhas_percentual": 37.37,
-    "ips_unicos_anterior": 272945,
-    "ips_unicos_diferenca": 351934,
-    "ips_unicos_percentual": 128.94,
-    "adicionados": 254766,
-    "removidos": 173158,
-    "rotatividade_percentual": 195.9
+    "linhas_anterior": 300000,
+    "linhas_diferenca": 0,
+    "linhas_percentual": 0.00,
+    "ips_unicos_anterior": 624879,
+    "ips_unicos_diferenca": 0,
+    "ips_unicos_percentual": 0.00,
+    "adicionados": 0,
+    "removidos": 0,
+    "rotatividade_percentual": 0.0
   },
   "integridade": {
     "md5": "ae242b316472de5a32d1b264716b6d5b",
