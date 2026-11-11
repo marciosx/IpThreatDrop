@@ -222284,5 +222284,3 @@
 8.138.185.255 # score=3 cps-avanzato-c2
 213.199.62.255 # score=3 cps-avanzato-c2
 197.224.232.255 # score=3 cps-avanzato-c2
-27.79.5.255 # score=3 abuseipdb
-143.198.180.255 # score=3 cps-avanzato-c2
