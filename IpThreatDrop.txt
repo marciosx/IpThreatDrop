@@ -222282,5 +222282,3 @@
 102.117.172.255 # score=3 cps-avanzato-c2
 101.132.180.255 # score=3 cps-avanzato-c2
 8.138.185.255 # score=3 cps-avanzato-c2
-213.199.62.255 # score=3 cps-avanzato-c2
-197.224.232.255 # score=3 cps-avanzato-c2
