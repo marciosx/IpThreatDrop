@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
   <img src="https://img.shields.io/badge/version-3.15.8-green.svg" alt="Versão">
   <img src="https://img.shields.io/github/last-commit/marciosx/IpThreatDrop" alt="Última atualização">
-  <img src="https://img.shields.io/badge/fontes-25-blue.svg" alt="Fontes">
+  <img src="https://img.shields.io/badge/fontes-40-blue.svg" alt="Fontes">
   <img src="https://img.shields.io/badge/allowlist-16-green.svg" alt="Allowlist">
 </p>
 
@@ -16,12 +16,12 @@
 
 ## 📋 Descrição
 
-**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **múltiplas fontes** de threat intelligence (Spamhaus DROP, Abuse.ch, SERPRO, ThreatFox, CrowdSec, AbuseIPDB, NRA, CPS, Bitwire, CINS, DShield, GreenSnow, SpydiSec, C2IntelFeeds, IPsum, entre outras).
+**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **múltiplas fontes** de threat intelligence (Spamhaus DROP, Abuse.ch, SERPRO, ThreatFox, CrowdSec, AbuseIPDB, CPS, Bitwire, CINS, DShield, GreenSnow, SpydiSec, C2IntelFeeds, IPsum, FireHOL, Phishing.Database, AlienVault OTX, entre outras).
 
 Os dados são gerados por um **script PowerShell v3.15.8** que faz:
 
-- 🔒 Coleta de **21+ fontes ativas** (Sources + CacheSources + AuthSources)
-- 🛡️ Aplica **allowlist de 18 fontes** (16 corporativas + antivírus)
+- 🔒 Coleta de **40 fontes ativas** (Sources + CacheSources + AuthSources + OsintSources)
+- 🛡️ Aplica **allowlist de 16 fontes** (14 corporativas + antivírus + DNS públicos)
 - 🧹 **Deduplicação inteligente** com agregação dinâmica (`/24` a `/30`)
 - 📊 **Score de ameaça** por concordância entre fontes
 - 🚀 Publicação em `IpThreatDrop.txt` e `allowlist.txt`
@@ -33,7 +33,7 @@ Os dados são gerados por um **script PowerShell v3.15.8** que faz:
 
 A allowlist é um conjunto de IPs e CIDRs que **nunca serão bloqueados**, mesmo que apareçam nas fontes de threat intelligence. Isso garante que serviços essenciais continuem funcionando sem interrupção.
 
-### ✅ Serviços na Allowlist (16 fontes corporativas)
+### ✅ Serviços na Allowlist (16 fontes)
 
 | Empresa / Serviço | Serviços | Importância |
 |-------------------|----------|-------------|
@@ -52,7 +52,7 @@ A allowlist é um conjunto de IPs e CIDRs que **nunca serão bloqueados**, mesmo
 | **Imperva** | WAF, DDoS | Segurança |
 | **Stripe** | Webhooks, API | Pagamentos |
 | **Antivírus (fixo)** | Bitdefender, ESET, Kaspersky, etc. | Endpoint Protection |
-| **DNS Pblicos (fixo)** | Google, Cloudflare. OpenDNS, Level3, etc... | Resolução DNS pública |
+| **DNS Públicos (fixo)** | Google, Cloudflare, OpenDNS, Level3, etc. | Resolução DNS pública |
 
 ### 🎯 Exemplo Prático
 
@@ -69,7 +69,7 @@ A allowlist é um conjunto de IPs e CIDRs que **nunca serão bloqueados**, mesmo
 ### 🛡️ Como Funciona
 
 1. **Coleta** — o script baixa as fontes de threat intelligence (com cache local 12-24h)
-2. **Allowlist** — os CIDRs das 18 allowlists são consolidados em redes `/24` protegidas
+2. **Allowlist** — os CIDRs das 16 allowlists são consolidados em redes `/24` protegidas
 3. **Filtragem** — IPs/CIDRs que caem em faixa protegida são **descartados antes** de entrar no pipeline
 4. **Agregação** — os IPs restantes são agrupados por `/24` e recebem a menor máscara possível (`/24` a `/30`)
 5. **Score** — cada entrada recebe um score baseado no peso das fontes que a listaram
@@ -82,7 +82,7 @@ A allowlist é um conjunto de IPs e CIDRs que **nunca serão bloqueados**, mesmo
 
 ```mermaid
 graph TD
-    A[21+ Fontes de Threat Intelligence] --> B[Coleta com cache]
+    A[40 Fontes de Threat Intelligence] --> B[Coleta com cache]
     B --> C{Fonte ativa?}
     C -->|Não| X[Ignorada]
     C -->|Sim| D[Download + Parse]
@@ -108,24 +108,48 @@ Os IPs e CIDRs são marcados com a origem no arquivo:
 | 3 | `binarydefense` | Lista de banimento de IPs maliciosos observados em honeypots |
 | 4 | `opendbl-tor` | Nós de saída da rede Tor (anonimização) |
 | 5 | `ipsum-github` | Agregação multi-fonte com nível de confiança (1-10) |
-| 6 | `netlas` | IPs maliciosos  |
-| 7 | `nra-osint` | Reputação OSINT de IPs com atividade suspeita |
-| 8 | `nra-sentinel-critical` | IPs com criticidade alta em feeds Sentinel |
-| 9 | `abuseipdb-borestad` | IPs reportados por abuso nos últimos 30 dias |
-| 10 | `cps-avanzato-c2` | IPs de C2 (Command & Control) do feed Avanzato |
-| 11 | `cps-collected-iocs` | IOCs coletados de múltiplas fontes do CPS |
-| 12 | `bitwire-outbound` | IPs com tráfego malicioso de saída (exfiltração) |
-| 13 | `cins` | IPs com pontuação de risco baseada em reputação |
-| 14 | `public-xlogic` | IPs maliciosos (feed público Xlogic) |
-| 15 | `ipinsights` | Blocklist agregada do serviço IP Insights |
-| 16 | `dshield` | IPs reportados ao SANS ISC DShield (top atacantes) |
-| 17 | `serpro` | Blocklist oficial do SERPRO (Segurança Nacional BR) |
-| 18 | `threatfox` | IPs de C2 e malware reportados ao abuse.ch|
-| 19 | `greensnow` | IPs maliciosos (ataques, bruteforce, scans)|
-| 20 | `spydisec` | Blocklist curada de alta confiança |
-| 21 | `c2intel-30d` | IPs de C2 ativos nos últimos 30 dias |
-| 22 | `crowdsec-1` / `crowdsec-2` / `crowdsec-3` | IPs maliciosos detectados por sensores CrowdSec |
-| 23 | `abuseipdb` | IPs reportados por abuso via API oficial |
+| 6 | `netlas` | IPs maliciosos |
+| 7 | `osint_reputation` | Reputação OSINT de IPs com atividade suspeita |
+| 8 | `high_critical` | IPs com criticidade alta (feed de reputação sênior) |
+| 9 | `osint_scanner` | IPs de scanners OSINT com atividade suspeita |
+| 10 | `abuseipdb-borestad` | IPs reportados por abuso nos últimos 30 dias |
+| 11 | `cps-avanzato-c2` | IPs de C2 (Command & Control) do feed Avanzato |
+| 12 | `cps-collected-iocs` | IOCs coletados de múltiplas fontes do CPS |
+| 13 | `bitwire-outbound` | IPs com tráfego malicioso de saída (exfiltração) |
+| 14 | `bitwire-inbound-1` a `bitwire-inbound-8` | IPs de entrada maliciosos  |
+| 15 | `cins` | IPs com pontuação de risco baseada em reputação |
+| 16 | `public-xlogic` | IPs maliciosos (feed público Xlogic) |
+| 17 | `dshield` | IPs reportados ao SANS ISC DShield (top atacantes) |
+| 18 | `serpro` | Blocklist oficial do SERPRO (Segurança Nacional BR) |
+| 19 | `threatfox` | IPs de C2 e malware reportados ao abuse.ch |
+| 20 | `greensnow` | IPs maliciosos (ataques, bruteforce, scans) |
+| 21 | `spydisec` | Blocklist curada de alta confiança |
+| 22 | `c2intel-30d` | IPs de C2 ativos nos últimos 30 dias |
+| 23 | `crowdsec-1` | IPs maliciosos detectados por sensores CrowdSec |
+| 24 | `abuseipdb` | IPs reportados por abuso via API oficial |
+| 25 | `ciarmy` | CI Army — IPs maliciosos de alta confiança |
+| 26 | `blackshield` | BlackShield Threat Intel |
+| 27 | `feodo-recommended` | C2 do Feodo Tracker (versão recomendada) |
+| 28 | `feodo-full` | C2 do Feodo Tracker (lista completa) |
+| 29 | `sslbl-c2` | C2 de botnets do SSLBL (abuse.ch) |
+| 30 | `et-compromised` | IPs comprometidos (Emerging Threats) |
+| 31 | `et-block-ips` | Block IPs (Emerging Threats) |
+| 32 | `xfeeds` | Feed de alta confiança XFeeds |
+| 33 | `NextRayAI` | IOCs do pulse NextRayAI (OTX) |
+| 34 | `threathive` | Blocklist agregada do ThreatHive |
+| 35 | `ipsum-level3` | Agregação multi-fonte nível 3 (confiança média) |
+| 36 | `ipsum-level3-remote` | Agregação multi-fonte nível 3 (fonte remota) |
+| 37 | `ipsum-level4` | Agregação multi-fonte nível 4 (confiança baixa) |
+| 38 | `firehol-level1` | FireHOL nível 1 (alta confiança) |
+| 39 | `firehol-level3` | FireHOL nível 3 (confiança média) |
+| 40 | `firehol-level4` | FireHOL nível 4 (confiança baixa) |
+| 41 | `openshield-c2` | IPs de C2 do OpenShield Blocklists |
+| 42 | `malicious-outgoing-40k` | IPs com tráfego malicioso de saída (40k) |
+| 43 | `malicious-ip-40k` | IPs maliciosos (40k) do romainmarcoux |
+| 44 | `blocklist.de-bots` | IPs de bots (blocklist.de) |
+| 45 | `phishing-db` | IPs ativos de phishing (Phishing.Database) |
+| 46 | `c2intel-unverified` | C2 não verificados (C2IntelFeeds) |
+| 47 | `alienvault-reputation` | Reputação de IPs (AlienVault OTX, arquivo local) |
 
 ## 🚀 Como Usar
 
@@ -199,7 +223,7 @@ Os dados são gerados automaticamente por um script PowerShell v3.15.8 que unifi
 
 **Script:** Blocklist Unifier
 
-- 🔒 21+ fontes ativas (Sources + CacheSources + AuthSources)
+- 🔒 40 fontes ativas (Sources + CacheSources + AuthSources + OsintSources)
 - 🚀 Coleta com timeout e retry automático (3 tentativas com backoff)
 - 🧹 Deduplicação inteligente com agregação de sub-redes `/24` a `/30`
 - 📊 Score de ameaça por concordância entre fontes
