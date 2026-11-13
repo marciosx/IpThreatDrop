@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
-  <img src="https://img.shields.io/badge/version-3.15.8-green.svg" alt="Versão">
+  <img src="https://img.shields.io/badge/version-3.21.0-green.svg" alt="Versão">
   <img src="https://img.shields.io/github/last-commit/marciosx/IpThreatDrop" alt="Última atualização">
   <img src="https://img.shields.io/badge/fontes-40-blue.svg" alt="Fontes">
   <img src="https://img.shields.io/badge/allowlist-16-green.svg" alt="Allowlist">
