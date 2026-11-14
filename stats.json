@@ -1,25 +1,25 @@
 {
   "versao": "3.21.0",
   "script_version": "3.21.0",
-  "timestamp": "2026-11-14 09:54:21",
+  "timestamp": "2026-11-14 13:44:43",
   "exit_code": 0,
   "erro_fatal": null,
   "dry_run": false,
-  "duracao_seg": 3252.0,
-  "duracao_hms": "00:54:12",
+  "duracao_seg": 2675.0,
+  "duracao_hms": "00:44:35",
   "tempos_seg": {
-    "upload": 9.1,
-    "agregacao": 555.3,
-    "coleta": 120.7,
-    "dedup+score": 1670.1,
-    "transferencia": 129.0,
-    "allowlist": 766.7
+    "allowlist": 311.1,
+    "dedup+score": 1659.3,
+    "transferencia": 131.7,
+    "agregacao": 474.9,
+    "coleta": 86.1,
+    "upload": 9.5
   },
-  "memoria_pico_mb": 2607.5,
+  "memoria_pico_mb": 2641.3,
   "config_sha256": "7109b1917e13af7e34669033b27bb5f59da1424e375662aafd9d957f8a738c51",
   "linhas_arquivo": 300000,
-  "ips_unicos": 647505,
-  "sha256": "df538205a5e1a6d8713014f3827da10ed081306efef7e11794bb1c950caefc1c",
+  "ips_unicos": 570037,
+  "sha256": "9f85990750b9ad3433eee929f4f06be03b38a35f95ae2bb401ee0359e7c20f9a",
   "envio_permitido": true,
   "upload_ok": true,
   "verificacao_divergente": false,
@@ -34,10 +34,10 @@
     "OTX_DugganUSA Master Threat Feed",
     "sslbl-c2"
   ],
-  "cidrs_nuvem_removidos": 7615,
-  "ips_nuvem_removidos": 42234,
+  "cidrs_nuvem_removidos": 8058,
+  "ips_nuvem_removidos": 42971,
   "rede_protegida_intervalos": 3104,
-  "rede_protegida_cache_hit": false,
-  "nra_ultimo_slot": null,
-  "nra_ultimo_feed": null
+  "rede_protegida_cache_hit": true,
+  "nra_ultimo_slot": "2026-11-14T13:01:35.6849144-03:00",
+  "nra_ultimo_feed": "high_critical"
 }
