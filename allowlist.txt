@@ -1,5 +1,5 @@
 # ALLOWLIST UNIFICADA
-# Gerada em 2026-11-20 01:36:26
+# Gerada em 2026-11-20 13:18:57
 
 # AWS
 1.178.1.0/24
