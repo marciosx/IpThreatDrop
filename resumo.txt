@@ -1,83 +1,80 @@
 =========================================
-RESUMO DA UNIFICACAO (v3.21.1) - 21/11/2026 01:17:27 - MODO: PRODUCAO
+RESUMO DA UNIFICACAO (v3.21.1) - 21/11/2026 13:18:26 - MODO: PRODUCAO
 =========================================
-Tempo total de execucao: 00:17:16 (1036.4 s)
+Tempo total de execucao: 00:18:11 (1091.6 s)
 Filtro de IPs: C# (Add-Type) - otimizado
-Total coletado: 6149310
-Total duplicado removido: 4782533 (77.77%)
-Entradas removidas por score abaixo de 3: 979763 (CIDRs: 41205 | CIDRs confiaveis poupados: 0)
-Total final (IPs/CIDRs unicos, pos-nuvem): 387014
-Sub-redes agregadas: 1171
-Prefixos /24 mantidos individuais: 34326
-IPs de nuvem/CDN removidos (score abaixo de 5): 36875
-CIDRs de fontes removidos por sobrepor nuvem/CDN (score abaixo de 5): 768
-Entradas redundantes removidas: 20983
-CIDRs grandes descartados (anti-envenenamento, menores que /16): 66
-  (Lista detalhada salva em: C:\blocklist\spamhaus\OTX\cidrs_grandes_descartados_20261121_011727.csv)
+Total coletado: 6119542
+Total duplicado removido: 4755895 (77.72%)
+Entradas removidas por score abaixo de 3: 979406 (CIDRs: 41568 | CIDRs confiaveis poupados: 0)
+Total final (IPs/CIDRs unicos, pos-nuvem): 384241
+Sub-redes agregadas: 1177
+Prefixos /24 mantidos individuais: 34455
+IPs de nuvem/CDN removidos (score abaixo de 5): 37376
+CIDRs de fontes removidos por sobrepor nuvem/CDN (score abaixo de 5): 752
+Entradas redundantes removidas: 20614
+CIDRs grandes descartados (anti-envenenamento, menores que /16): 54
+  (Lista detalhada salva em: C:\blocklist\spamhaus\OTX\cidrs_grandes_descartados_20261121_131826.csv)
 Linhas invalidas removidas na validacao final: 0
 Limiares por mascara: /24>=100 /25>=64 /26>=32 /27>=16 /28>=8 /29>=3 /30>=2
-Comparacao com a lista anterior: Entradas novas: 7900 | removidas: 7900 | variacao: 0% | rotatividade: 5.3% (anterior: 300000 linhas)
+Comparacao com a lista anterior: Entradas novas: 7694 | removidas: 7694 | variacao: 0% | rotatividade: 5.1% (anterior: 300000 linhas)
 Diagnostico por fonte (8 colunas - fecha a conta):
-  bitwire-inbound                            total= 588594  score_baixo= 541615  nuvem=      0  compartilhados=  46979  exclusivos= 541615  exclusivos_mantidos=      0  status=ok
-  blackshield                                total= 276411  score_baixo= 179774  nuvem=      0  compartilhados=  96637  exclusivos= 179774  exclusivos_mantidos=      0  status=ok
-  firehol-level4                             total= 193216  score_baixo= 102478  nuvem=      0  compartilhados=  90738  exclusivos= 102478  exclusivos_mantidos=      0  status=ok
-  threathive                                 total= 187398  score_baixo=      0  nuvem=   6950  compartilhados= 157318  exclusivos=  30080  exclusivos_mantidos=  23130  status=ok
-  abuseipdb-borestad                         total= 156082  score_baixo=  26846  nuvem=      0  compartilhados= 129236  exclusivos=  26846  exclusivos_mantidos=      0  status=ok
-  bitwire-outbound                           total=  97938  score_baixo=      0  nuvem=    606  compartilhados=  67062  exclusivos=  30876  exclusivos_mantidos=  30270  status=ok
-  osint_reputation                           total=  83079  score_baixo=      0  nuvem=      0  compartilhados=  14466  exclusivos=  68613  exclusivos_mantidos=  68613  status=ok
-  netlas                                     total=  61428  score_baixo=  59908  nuvem=      0  compartilhados=   1520  exclusivos=  59908  exclusivos_mantidos=      0  status=ok
-  malicious-ip-40k                           total=  40000  score_baixo=   1100  nuvem=      0  compartilhados=  38900  exclusivos=   1100  exclusivos_mantidos=      0  status=ok
-  malicious-outgoing-40k                     total=  40000  score_baixo=   2248  nuvem=      0  compartilhados=  37752  exclusivos=   2248  exclusivos_mantidos=      0  status=ok
+  bitwire-inbound                            total= 588589  score_baixo= 542220  nuvem=      0  compartilhados=  46369  exclusivos= 542220  exclusivos_mantidos=      0  status=ok
+  blackshield                                total= 276411  score_baixo= 179911  nuvem=      0  compartilhados=  96500  exclusivos= 179911  exclusivos_mantidos=      0  status=ok
+  firehol-level4                             total= 194374  score_baixo= 103416  nuvem=      0  compartilhados=  90958  exclusivos= 103416  exclusivos_mantidos=      0  status=ok
+  threathive                                 total= 187398  score_baixo=      0  nuvem=   7325  compartilhados= 155125  exclusivos=  32273  exclusivos_mantidos=  24948  status=ok
+  abuseipdb-borestad                         total= 156995  score_baixo=  26657  nuvem=      0  compartilhados= 130338  exclusivos=  26657  exclusivos_mantidos=      0  status=ok
+  bitwire-outbound                           total= 101170  score_baixo=      0  nuvem=    592  compartilhados=  70638  exclusivos=  30532  exclusivos_mantidos=  29940  status=ok
+  osint_reputation                           total=  83079  score_baixo=      0  nuvem=      0  compartilhados=  14317  exclusivos=  68762  exclusivos_mantidos=  68762  status=ok
+  netlas                                     total=  61428  score_baixo=  59905  nuvem=      0  compartilhados=   1523  exclusivos=  59905  exclusivos_mantidos=      0  status=ok
+  malicious-ip-40k                           total=  40000  score_baixo=   1125  nuvem=      0  compartilhados=  38875  exclusivos=   1125  exclusivos_mantidos=      0  status=ok
+  malicious-outgoing-40k                     total=  40000  score_baixo=   1993  nuvem=      0  compartilhados=  38007  exclusivos=   1993  exclusivos_mantidos=      0  status=ok
   cps-collected-iocs                         total=  32703  score_baixo=  26691  nuvem=      0  compartilhados=   6012  exclusivos=  26691  exclusivos_mantidos=      0  status=ok
-  threatfox                                  total=  21756  score_baixo=      0  nuvem=      6  compartilhados=  21153  exclusivos=    603  exclusivos_mantidos=    597  status=ok
-  ipsum-level3-remote                        total=  19089  score_baixo=      0  nuvem=      0  compartilhados=  19089  exclusivos=      0  exclusivos_mantidos=      0  status=ok
-  cps-avanzato-c2                            total=  17972  score_baixo=      0  nuvem=   7700  compartilhados=   3648  exclusivos=  14324  exclusivos_mantidos=   6624  status=ok
-  ipsum-level3                               total=  17596  score_baixo=     14  nuvem=      0  compartilhados=  17582  exclusivos=     14  exclusivos_mantidos=      0  status=ok
-  cins                                       total=  15000  score_baixo=      0  nuvem=      2  compartilhados=  14852  exclusivos=    148  exclusivos_mantidos=    146  status=ok
-  ciarmy                                     total=  13475  score_baixo=      0  nuvem=     61  compartilhados=  13195  exclusivos=    280  exclusivos_mantidos=    219  status=ok
-  firehol-level3                             total=  13000  score_baixo=   1627  nuvem=      0  compartilhados=  11373  exclusivos=   1627  exclusivos_mantidos=      0  status=ok
-  abuseipdb                                  total=   9976  score_baixo=      0  nuvem=      2  compartilhados=   9953  exclusivos=     23  exclusivos_mantidos=     21  status=ok
+  threatfox                                  total=  21758  score_baixo=      0  nuvem=      6  compartilhados=  21181  exclusivos=    577  exclusivos_mantidos=    571  status=ok
+  ipsum-level3-remote                        total=  19549  score_baixo=      5  nuvem=      0  compartilhados=  19544  exclusivos=      5  exclusivos_mantidos=      0  status=ok
+  cps-avanzato-c2                            total=  17990  score_baixo=      0  nuvem=   7706  compartilhados=   3658  exclusivos=  14332  exclusivos_mantidos=   6626  status=ok
+  cins                                       total=  15000  score_baixo=      0  nuvem=      9  compartilhados=  14232  exclusivos=    768  exclusivos_mantidos=    759  status=ok
+  ciarmy                                     total=  13798  score_baixo=      0  nuvem=     50  compartilhados=  13643  exclusivos=    155  exclusivos_mantidos=    105  status=ok
+  abuseipdb                                  total=   9986  score_baixo=      0  nuvem=      0  compartilhados=   9986  exclusivos=      0  exclusivos_mantidos=      0  status=ok
   NextRayAI                                  total=   9455  score_baixo=   7414  nuvem=      0  compartilhados=   2041  exclusivos=   7414  exclusivos_mantidos=      0  status=ok
-  ipsum-level4                               total=   9023  score_baixo=      0  nuvem=      0  compartilhados=   9023  exclusivos=      0  exclusivos_mantidos=      0  status=ok
-  xfeeds                                     total=   8727  score_baixo=      0  nuvem=      0  compartilhados=   8710  exclusivos=     17  exclusivos_mantidos=     17  status=ok
-  c2intel-unverified                         total=   8568  score_baixo=   6385  nuvem=      0  compartilhados=   2183  exclusivos=   6385  exclusivos_mantidos=      0  status=ok
-  serpro                                     total=   8350  score_baixo=      0  nuvem=      0  compartilhados=   7357  exclusivos=    993  exclusivos_mantidos=    993  status=ok
+  serpro                                     total=   8889  score_baixo=      0  nuvem=      0  compartilhados=   7797  exclusivos=   1092  exclusivos_mantidos=   1092  status=ok
+  c2intel-unverified                         total=   8768  score_baixo=   6578  nuvem=      0  compartilhados=   2190  exclusivos=   6578  exclusivos_mantidos=      0  status=ok
+  ipsum-level4                               total=   8439  score_baixo=      0  nuvem=      0  compartilhados=   8439  exclusivos=      0  exclusivos_mantidos=      0  status=ok
+  xfeeds                                     total=   8412  score_baixo=      0  nuvem=      0  compartilhados=   8398  exclusivos=     14  exclusivos_mantidos=     14  status=ok
   phishing-db                                total=   7124  score_baixo=      0  nuvem=   2446  compartilhados=    135  exclusivos=   6989  exclusivos_mantidos=   4543  status=ok
-  osint_scanner                              total=   6754  score_baixo=      0  nuvem=      0  compartilhados=   2056  exclusivos=   4698  exclusivos_mantidos=   4698  status=ok
-  firehol-level1                             total=   4617  score_baixo=      0  nuvem=      0  compartilhados=   1944  exclusivos=   2673  exclusivos_mantidos=   2673  status=ok
-  crowdsec-1                                 total=   3754  score_baixo=      0  nuvem=    399  compartilhados=     30  exclusivos=   3724  exclusivos_mantidos=   3325  status=ok
-  public-xlogic                              total=   3689  score_baixo=      0  nuvem=      0  compartilhados=    516  exclusivos=   3173  exclusivos_mantidos=   3173  status=ok
-  blocklist.de-bots                          total=   2894  score_baixo=    652  nuvem=      0  compartilhados=   2242  exclusivos=    652  exclusivos_mantidos=      0  status=ok
-  greensnow                                  total=   2288  score_baixo=      0  nuvem=     36  compartilhados=   1969  exclusivos=    319  exclusivos_mantidos=    283  status=ok
-  spydisec                                   total=   1934  score_baixo=      0  nuvem=     31  compartilhados=   1610  exclusivos=    324  exclusivos_mantidos=    293  status=ok
-  et-block-ips                               total=   1759  score_baixo=      0  nuvem=      0  compartilhados=   1759  exclusivos=      0  exclusivos_mantidos=      0  status=ok
-  spamhaus-drop                              total=   1744  score_baixo=      0  nuvem=      0  compartilhados=   1735  exclusivos=      9  exclusivos_mantidos=      9  status=ok
-  opendbl-tor                                total=   1305  score_baixo=      0  nuvem=      0  compartilhados=   1305  exclusivos=      0  exclusivos_mantidos=      0  status=ok
-  OTX_HoneyAI_HTTP_Honeypot                  total=   1050  score_baixo=    111  nuvem=      0  compartilhados=    939  exclusivos=    111  exclusivos_mantidos=      0  status=ok
-  blocklist.brute                            total=    790  score_baixo=      6  nuvem=      0  compartilhados=    784  exclusivos=      6  exclusivos_mantidos=      0  status=ok
+  osint_scanner                              total=   6754  score_baixo=      0  nuvem=      0  compartilhados=   2054  exclusivos=   4700  exclusivos_mantidos=   4700  status=ok
+  crowdsec-1                                 total=   3754  score_baixo=      0  nuvem=    400  compartilhados=     29  exclusivos=   3725  exclusivos_mantidos=   3325  status=ok
+  public-xlogic                              total=   3689  score_baixo=      0  nuvem=      0  compartilhados=    515  exclusivos=   3174  exclusivos_mantidos=   3174  status=ok
+  blocklist.de-bots                          total=   2672  score_baixo=    657  nuvem=      0  compartilhados=   2015  exclusivos=    657  exclusivos_mantidos=      0  status=ok
+  spydisec                                   total=   1934  score_baixo=      0  nuvem=     34  compartilhados=   1607  exclusivos=    327  exclusivos_mantidos=    293  status=ok
+  greensnow                                  total=   1924  score_baixo=      0  nuvem=     34  compartilhados=   1613  exclusivos=    311  exclusivos_mantidos=    277  status=ok
+  et-block-ips                               total=   1759  score_baixo=      6  nuvem=      0  compartilhados=   1753  exclusivos=      6  exclusivos_mantidos=      0  status=ok
+  spamhaus-drop                              total=   1750  score_baixo=      0  nuvem=      0  compartilhados=   1741  exclusivos=      9  exclusivos_mantidos=      9  status=ok
+  opendbl-tor                                total=   1297  score_baixo=      0  nuvem=      0  compartilhados=   1297  exclusivos=      0  exclusivos_mantidos=      0  status=ok
+  OTX_HoneyAI_HTTP_Honeypot                  total=   1038  score_baixo=    105  nuvem=      0  compartilhados=    933  exclusivos=    105  exclusivos_mantidos=      0  status=ok
+  blocklist.brute                            total=    862  score_baixo=    105  nuvem=      0  compartilhados=    757  exclusivos=    105  exclusivos_mantidos=      0  status=ok
   alienvault-reputation                      total=    609  score_baixo=      0  nuvem=      0  compartilhados=    609  exclusivos=      0  exclusivos_mantidos=      0  status=ok
-  et-compromised                             total=    590  score_baixo=      0  nuvem=      0  compartilhados=    590  exclusivos=      0  exclusivos_mantidos=      0  status=ok
-  binarydefense                              total=    465  score_baixo=      0  nuvem=      2  compartilhados=    444  exclusivos=     21  exclusivos_mantidos=     19  status=ok
-  threatview-ioc-tweets                      total=    216  score_baixo=    101  nuvem=      0  compartilhados=    115  exclusivos=    101  exclusivos_mantidos=      0  status=ok
-  c2intel-30d                                total=    204  score_baixo=      0  nuvem=      0  compartilhados=    204  exclusivos=      0  exclusivos_mantidos=      0  status=ok
+  et-compromised                             total=    596  score_baixo=      0  nuvem=      0  compartilhados=    596  exclusivos=      0  exclusivos_mantidos=      0  status=ok
+  binarydefense                              total=    465  score_baixo=      0  nuvem=      0  compartilhados=    465  exclusivos=      0  exclusivos_mantidos=      0  status=ok
+  threatview-ioc-tweets                      total=    228  score_baixo=    111  nuvem=      0  compartilhados=    117  exclusivos=    111  exclusivos_mantidos=      0  status=ok
+  c2intel-30d                                total=    205  score_baixo=      0  nuvem=      0  compartilhados=    205  exclusivos=      0  exclusivos_mantidos=      0  status=ok
   threatcluster                              total=    198  score_baixo=      0  nuvem=      0  compartilhados=     89  exclusivos=    109  exclusivos_mantidos=    109  status=ok
   high_critical                              total=    148  score_baixo=      0  nuvem=      0  compartilhados=     88  exclusivos=     60  exclusivos_mantidos=     60  status=ok
   openshield-c2                              total=     44  score_baixo=      0  nuvem=      4  compartilhados=     12  exclusivos=     32  exclusivos_mantidos=     28  status=ok
-  dshield                                    total=     20  score_baixo=      3  nuvem=      0  compartilhados=     17  exclusivos=      3  exclusivos_mantidos=      0  status=ok
+  dshield                                    total=     20  score_baixo=      7  nuvem=      0  compartilhados=     13  exclusivos=      7  exclusivos_mantidos=      0  status=ok
   feodo-full                                 total=      5  score_baixo=      0  nuvem=      0  compartilhados=      5  exclusivos=      0  exclusivos_mantidos=      0  status=ok
   feodo-recommended                          total=      1  score_baixo=      0  nuvem=      0  compartilhados=      1  exclusivos=      0  exclusivos_mantidos=      0  status=ok
-  (CSV detalhado: C:\blocklist\spamhaus\OTX\diag_20261121_011727.csv)
-Distribuição de máscaras: /29=283, /24=159, /26=15, /30=660, /27=26, /25=6, /28=22
+  (CSV detalhado: C:\blocklist\spamhaus\OTX\diag_20261121_131826.csv)
+Distribuição de máscaras: /25=6, /26=15, /30=666, /24=160, /28=22, /29=282, /27=26
 Total de linhas no arquivo: 300000
-Limite de linhas (Fortigate): 300000 | Cortadas por prioridade: 29200
+Limite de linhas (Fortigate): 300000 | Cortadas por prioridade: 26834
 Fontes OTX ativas: 1/3
   Pulses: HoneyAI_HTTP_Honeypot (ID: 69ebf361c06a57718d0c0838); IOC Records Provided by @NextRayAI (ID: 63456c2a30b92337ea1670e0); HoneyAI_Network_Services_Attack_Feed (ID: 6a3407d69c9a31c90e0debe2); Federal_Agencies_Warn (ID: 6a6ab0b45dd9e2b4b1972bca); DugganUSA Master Threat Feed (ID: 6927d4c1611927c371ffd3cb)
 Allowlist: AWS, Cloudflare, Google, Microsoft, Oracle, Fastly, Akamai, GitHub, Zoom, Datadog, Pingdom, UptimeRobot, Imperva, Stripe, Scanners Legítimos (Xorlent)
 Rede protegida: 2991 intervalos (cache hit: True)
 Fonte de maior volume: bitwire-inbound (588693 entradas)
-Fontes sem dados nesta execucao: OTX_Federal_Agencies_Warn, OTX_DugganUSA Master Threat Feed, sslbl-c2
-Arquivo: C:\blocklist\spamhaus\OTX\IpThreatDrop.txt (17491.28 KB)
-SHA-256: d035bf6ed59356d6619580c22f9d7bef18412e66e1a33b106e2d4bb6a1ed413a
-config_sha256: 8c5081d9ebb2e0ae448fc1f22a2acc0d9029a1d053b027b7aa0f74967e24b133
+Fontes sem dados nesta execucao: OTX_Federal_Agencies_Warn, OTX_DugganUSA Master Threat Feed, sslbl-c2, ipsum-level3, firehol-level3, firehol-level1
+Arquivo: C:\blocklist\spamhaus\OTX\IpThreatDrop.txt (17314.01 KB)
+SHA-256: 49e90ffa98f2062a239fcfca5ba41e9d9fbfe6b56a2255cb7c5ae1d1c136611f
+config_sha256: 51390a226e65c95f6a7c3a77d97c5a5b8841d2c743e6dba96c6657379fb334ad
 Diretorio de exports OTX: C:\blocklist\spamhaus\OTX\otx_exports
 =========================================
