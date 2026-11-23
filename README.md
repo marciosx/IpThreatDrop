@@ -2,9 +2,9 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
-  <img src="https://img.shields.io/badge/version-3.21.0-green.svg" alt="Versão">
+  <img src="https://img.shields.io/badge/version-3.21.1-green.svg" alt="Versão">
   <img src="https://img.shields.io/github/last-commit/marciosx/IpThreatDrop" alt="Última atualização">
-  <img src="https://img.shields.io/badge/fontes-40-blue.svg" alt="Fontes">
+  <img src="https://img.shields.io/badge/fontes-52-blue.svg" alt="Fontes">
   <img src="https://img.shields.io/badge/allowlist-16-green.svg" alt="Allowlist">
 </p>
 
@@ -16,11 +16,11 @@
 
 ## 📋 Descrição
 
-**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **múltiplas fontes** de threat intelligence (Spamhaus DROP, Abuse.ch, SERPRO, ThreatFox, CrowdSec, AbuseIPDB, CPS, Bitwire, CINS, DShield, GreenSnow, SpydiSec, C2IntelFeeds, IPsum, FireHOL, Phishing.Database, AlienVault OTX, entre outras).
+**IpThreatDrop** é a **Blocklist Unificada** — uma lista de IPs e blocos CIDR maliciosos atualizada automaticamente a partir de **múltiplas fontes** de threat intelligence (Spamhaus DROP, Abuse.ch, SERPRO, ThreatFox, CrowdSec, AbuseIPDB, CPS, Carpathian, Adversary-Hunter, 3CORESec, Turris Sentinel, Bitwire, CINS, DShield, GreenSnow, SpydiSec, C2IntelFeeds, IPsum, FireHOL, Phishing.Database, AlienVault OTX, entre outras).
 
-Os dados são gerados por um **script PowerShell v3.15.8** que faz:
+Os dados são gerados por um **script PowerShell v3.21.1** que faz:
 
-- 🔒 Coleta de **40 fontes ativas** (Sources + CacheSources + AuthSources + OsintSources)
+- 🔒 Coleta de **52 fontes ativas** (Sources + CacheSources + AuthSources + OTX)
 - 🛡️ Aplica **allowlist de 16 fontes** (14 corporativas + antivírus + DNS públicos)
 - 🧹 **Deduplicação inteligente** com agregação dinâmica (`/24` a `/30`)
 - 📊 **Score de ameaça** por concordância entre fontes
@@ -82,7 +82,7 @@ A allowlist é um conjunto de IPs e CIDRs que **nunca serão bloqueados**, mesmo
 
 ```mermaid
 graph TD
-    A[40 Fontes de Threat Intelligence] --> B[Coleta com cache]
+    A[52 Fontes de Threat Intelligence] --> B[Coleta com cache]
     B --> C{Fonte ativa?}
     C -->|Não| X[Ignorada]
     C -->|Sim| D[Download + Parse]
@@ -102,54 +102,60 @@ graph TD
 Os IPs e CIDRs são marcados com a origem no arquivo:
 
 | # | Fonte | Fornece |
-|---|-------|-------|
+|---|-------|---------|
 | 1 | `spamhaus-drop` | Blocos CIDR de redes sequestradas e sob controle de criminosos |
 | 2 | `blocklist.brute` | IPs que tentaram força bruta em SSH, FTP, mail, etc. |
 | 3 | `binarydefense` | Lista de banimento de IPs maliciosos observados em honeypots |
 | 4 | `opendbl-tor` | Nós de saída da rede Tor (anonimização) |
-| 5 | `ipsum-github` | Agregação multi-fonte com nível de confiança (1-10) |
-| 6 | `netlas` | IPs maliciosos |
-| 7 | `osint_reputation` | Reputação OSINT de IPs com atividade suspeita |
-| 8 | `high_critical` | IPs com criticidade alta (feed de reputação sênior) |
-| 9 | `osint_scanner` | IPs de scanners OSINT com atividade suspeita |
-| 10 | `abuseipdb-borestad` | IPs reportados por abuso nos últimos 30 dias |
-| 11 | `cps-avanzato-c2` | IPs de C2 (Command & Control) do feed Avanzato |
-| 12 | `cps-collected-iocs` | IOCs coletados de múltiplas fontes do CPS |
-| 13 | `bitwire-outbound` | IPs com tráfego malicioso de saída (exfiltração) |
-| 14 | `bitwire-inbound-1` a `bitwire-inbound-8` | IPs de entrada maliciosos  |
-| 15 | `cins` | IPs com pontuação de risco baseada em reputação |
-| 16 | `public-xlogic` | IPs maliciosos (feed público Xlogic) |
-| 17 | `dshield` | IPs reportados ao SANS ISC DShield (top atacantes) |
-| 18 | `serpro` | Blocklist oficial do SERPRO (Segurança Nacional BR) |
-| 19 | `threatfox` | IPs de C2 e malware reportados ao abuse.ch |
-| 20 | `greensnow` | IPs maliciosos (ataques, bruteforce, scans) |
-| 21 | `spydisec` | Blocklist curada de alta confiança |
-| 22 | `c2intel-30d` | IPs de C2 ativos nos últimos 30 dias |
-| 23 | `crowdsec-1` | IPs maliciosos detectados por sensores CrowdSec |
-| 24 | `abuseipdb` | IPs reportados por abuso via API oficial |
-| 25 | `ciarmy` | CI Army — IPs maliciosos de alta confiança |
-| 26 | `blackshield` | BlackShield Threat Intel |
-| 27 | `feodo-recommended` | C2 do Feodo Tracker (versão recomendada) |
-| 28 | `feodo-full` | C2 do Feodo Tracker (lista completa) |
-| 29 | `sslbl-c2` | C2 de botnets do SSLBL (abuse.ch) |
-| 30 | `et-compromised` | IPs comprometidos (Emerging Threats) |
-| 31 | `et-block-ips` | Block IPs (Emerging Threats) |
-| 32 | `xfeeds` | Feed de alta confiança XFeeds |
-| 33 | `NextRayAI` | IOCs do pulse NextRayAI (OTX) |
-| 34 | `threathive` | Blocklist agregada do ThreatHive |
-| 35 | `ipsum-level3` | Agregação multi-fonte nível 3 (confiança média) |
-| 36 | `ipsum-level3-remote` | Agregação multi-fonte nível 3 (fonte remota) |
-| 37 | `ipsum-level4` | Agregação multi-fonte nível 4 (confiança baixa) |
-| 38 | `firehol-level1` | FireHOL nível 1 (alta confiança) |
-| 39 | `firehol-level3` | FireHOL nível 3 (confiança média) |
-| 40 | `firehol-level4` | FireHOL nível 4 (confiança baixa) |
-| 41 | `openshield-c2` | IPs de C2 do OpenShield Blocklists |
-| 42 | `malicious-outgoing-40k` | IPs com tráfego malicioso de saída (40k) |
-| 43 | `malicious-ip-40k` | IPs maliciosos (40k) do romainmarcoux |
-| 44 | `blocklist.de-bots` | IPs de bots (blocklist.de) |
-| 45 | `phishing-db` | IPs ativos de phishing (Phishing.Database) |
-| 46 | `c2intel-unverified` | C2 não verificados (C2IntelFeeds) |
-| 47 | `alienvault-reputation` | Reputação de IPs (AlienVault OTX, arquivo local) |
+| 5 | `netlas` | IPs maliciosos |
+| 6 | `abuseipdb-borestad` | IPs reportados por abuso nos últimos 30 dias |
+| 7 | `cps-avanzato-c2` | IPs de C2 (Command & Control) do feed Avanzato |
+| 8 | `cps-collected-iocs` | IOCs coletados de múltiplas fontes do CPS |
+| 9 | `cps-cobaltstrike` | Servidores C2 Cobalt Strike ativos (CriticalPathSecurity) |
+| 10 | `adversary-hunter-c2` | Infraestrutura ativa de C2 (Cobalt Strike, Sliver, Havoc, RATs e stealers) |
+| 11 | `carpathian-ti` | Telemetria de ataques ativos em borda, IDS e brute-force (Carpathian AI) |
+| 12 | `3coresec-all` | Feed consolidado de honeypots e ataques ativos (3CORESec) |
+| 13 | `turris-sentinel` | Greylist de scanners e brute-force em tempo real (CZ.NIC Turris Sentinel) |
+| 14 | `rutgers-attackers` | IPs capturados atacando diretamente a infraestrutura da Universidade Rutgers |
+| 15 | `blocklist.de-strongips` | IPs reincidentes com mais de 5.000 ataques registrados (blocklist.de) |
+| 16 | `ipthreat-100` | IPs com pontuação máxima de ameaça (score 100/100) do IPThreat.net |
+| 17 | `bitwire-outbound` | IPs com tráfego malicioso de saída (exfiltração) |
+| 18 | `bitwire-inbound` (`inbound-1` a `inbound-8`) | IPs de entrada maliciosos |
+| 19 | `cins` | IPs com pontuação de risco baseada em reputação |
+| 20 | `public-xlogic` | IPs maliciosos (feed público Xlogic) |
+| 21 | `dshield` | IPs reportados ao SANS ISC DShield (top atacantes) |
+| 22 | `serpro` | Blocklist oficial do SERPRO (Segurança Nacional BR) |
+| 23 | `threatfox` | IPs de C2 e malware reportados ao abuse.ch |
+| 24 | `greensnow` | IPs maliciosos (ataques, bruteforce, scans) |
+| 25 | `spydisec` | Blocklist curada de alta confiança |
+| 26 | `c2intel-30d` | IPs de C2 ativos nos últimos 30 dias |
+| 27 | `crowdsec-1` | IPs maliciosos detectados por sensores CrowdSec |
+| 28 | `abuseipdb` | IPs reportados por abuso via API oficial |
+| 29 | `ciarmy` | CI Army — IPs maliciosos de alta confiança |
+| 30 | `blackshield` | BlackShield Threat Intel |
+| 31 | `feodo-recommended` | C2 do Feodo Tracker (versão recomendada) |
+| 32 | `feodo-full` | C2 do Feodo Tracker (lista completa) |
+| 33 | `sslbl-c2` | C2 de botnets do SSLBL (abuse.ch) |
+| 34 | `et-compromised` | IPs comprometidos (Emerging Threats) |
+| 35 | `et-block-ips` | Block IPs (Emerging Threats) |
+| 36 | `xfeeds` | Feed de alta confiança XFeeds |
+| 37 | `NextRayAI` | IOCs do pulse NextRayAI (OTX) |
+| 38 | `threathive` | Blocklist agregada do ThreatHive |
+| 39 | `ipsum-level3` | Agregação multi-fonte nível 3 (confiança média) |
+| 40 | `ipsum-level3-remote` | Agregação multi-fonte nível 3 (fonte remota) |
+| 41 | `ipsum-level4` | Agregação multi-fonte nível 4 (confiança baixa) |
+| 42 | `firehol-level1` | FireHOL nível 1 (alta confiança) |
+| 43 | `firehol-level3` | FireHOL nível 3 (confiança média) |
+| 44 | `firehol-level4` | FireHOL nível 4 (confiança baixa) |
+| 45 | `openshield-c2` | IPs de C2 do OpenShield Blocklists |
+| 46 | `malicious-outgoing-40k` | IPs com tráfego malicioso de saída (40k) |
+| 47 | `malicious-ip-40k` | IPs maliciosos (`full-aa.txt`) do romainmarcoux |
+| 48 | `blocklist.de-bots` | IPs de bots (blocklist.de) |
+| 49 | `phishing-db` | IPs ativos de phishing (Phishing.Database) |
+| 50 | `c2intel-unverified` | C2 não verificados (C2IntelFeeds) |
+| 51 | `alienvault-reputation` | Reputação de IPs (AlienVault OTX, arquivo local) |
+| 52 | `threatcluster` | IOCs públicos de IPs maliciosos (ThreatCluster) |
+| 53 | `threatview-ioc-tweets` | IPs de IOCs coletados via ThreatView |
 
 ## 🚀 Como Usar
 
@@ -223,11 +229,11 @@ Os dados são gerados automaticamente por um script PowerShell v3.15.8 que unifi
 
 **Script:** Blocklist Unifier
 
-- 🔒 40 fontes ativas (Sources + CacheSources + AuthSources + OsintSources)
+- 🔒 52 fontes ativas (Sources + CacheSources + AuthSources + OTX)
 - 🚀 Coleta com timeout e retry automático (3 tentativas com backoff)
 - 🧹 Deduplicação inteligente com agregação de sub-redes `/24` a `/30`
 - 📊 Score de ameaça por concordância entre fontes
-- 🛡️ Allowlist de 18 fontes (16 corporativas + antivírus)
+- 🛡️ Allowlist de 16 fontes (14 corporativas + antivírus + DNS públicos)
 - 🕐 Cache local de 12-24h para fontes lentas
 - 📝 Logs rotativos (manhã/tarde) com retenção configurável
 - 🔐 Auto-recuperação do `config.json` via `config.json.bak`
